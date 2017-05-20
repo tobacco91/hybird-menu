@@ -1,0 +1,16 @@
+{
+  "name": "menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getResource.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "mysql": "^2.13.0",
+    "request": "^2.81.0"
+  }
+}
