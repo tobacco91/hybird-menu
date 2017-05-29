@@ -1,0 +1,714 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC3A1B549B7364FA03898C20 /* libPods-HybridMenu-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C45A484B8561F0F30B0AD9D7 /* libPods-HybridMenu-iOS.a */; };
+		F28A3E431EDC5820005E51EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E301EDC5820005E51EE /* AppDelegate.m */; };
+		F28A3E441EDC5820005E51EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28A3E311EDC5820005E51EE /* Assets.xcassets */; };
+		F28A3E451EDC5820005E51EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A3E321EDC5820005E51EE /* LaunchScreen.storyboard */; };
+		F28A3E461EDC5820005E51EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A3E341EDC5820005E51EE /* Main.storyboard */; };
+		F28A3E471EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E361EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld */; };
+		F28A3E491EDC5820005E51EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E391EDC5820005E51EE /* main.m */; };
+		F28A3E4A1EDC5820005E51EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E3B1EDC5820005E51EE /* ViewController.m */; };
+		F28A3E4D1EDC58D8005E51EE /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E4C1EDC58D8005E51EE /* HttpClient.m */; };
+		F2D6CE421EDC4A2200D8EEFC /* HybridMenu_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D6CE411EDC4A2200D8EEFC /* HybridMenu_iOSTests.m */; };
+		F2D6CE4D1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D6CE4C1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2D6CE3E1EDC4A2200D8EEFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D6CE191EDC4A2200D8EEFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2D6CE201EDC4A2200D8EEFC;
+			remoteInfo = "HybridMenu-iOS";
+		};
+		F2D6CE491EDC4A2200D8EEFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D6CE191EDC4A2200D8EEFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2D6CE201EDC4A2200D8EEFC;
+			remoteInfo = "HybridMenu-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FB26CBC0318A7036BA8A442 /* Pods-HybridMenu-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridMenu-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HybridMenu-iOS/Pods-HybridMenu-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		C45A484B8561F0F30B0AD9D7 /* libPods-HybridMenu-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HybridMenu-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26B778B5ECD761CE76F7D85 /* Pods-HybridMenu-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridMenu-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HybridMenu-iOS/Pods-HybridMenu-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F28A3E2F1EDC5820005E51EE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F28A3E301EDC5820005E51EE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F28A3E311EDC5820005E51EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F28A3E331EDC5820005E51EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F28A3E351EDC5820005E51EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F28A3E371EDC5820005E51EE /* HybridMenu_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HybridMenu_iOS.xcdatamodel; sourceTree = "<group>"; };
+		F28A3E381EDC5820005E51EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F28A3E391EDC5820005E51EE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F28A3E3A1EDC5820005E51EE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F28A3E3B1EDC5820005E51EE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F28A3E4B1EDC58D8005E51EE /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		F28A3E4C1EDC58D8005E51EE /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		F2D6CE211EDC4A2200D8EEFC /* HybridMenu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HybridMenu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2D6CE3D1EDC4A2200D8EEFC /* HybridMenu-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HybridMenu-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2D6CE411EDC4A2200D8EEFC /* HybridMenu_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridMenu_iOSTests.m; sourceTree = "<group>"; };
+		F2D6CE431EDC4A2200D8EEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2D6CE481EDC4A2200D8EEFC /* HybridMenu-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HybridMenu-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2D6CE4C1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridMenu_iOSUITests.m; sourceTree = "<group>"; };
+		F2D6CE4E1EDC4A2200D8EEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2D6CE1E1EDC4A2200D8EEFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC3A1B549B7364FA03898C20 /* libPods-HybridMenu-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D6CE3A1EDC4A2200D8EEFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D6CE451EDC4A2200D8EEFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CF154C8DEA180A9CE82D3FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C45A484B8561F0F30B0AD9D7 /* libPods-HybridMenu-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF78124E6C8A5053E6A36465 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E26B778B5ECD761CE76F7D85 /* Pods-HybridMenu-iOS.debug.xcconfig */,
+				1FB26CBC0318A7036BA8A442 /* Pods-HybridMenu-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F28A3E2D1EDC5820005E51EE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F28A3E2E1EDC5820005E51EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F28A3E2F1EDC5820005E51EE /* AppDelegate.h */,
+				F28A3E301EDC5820005E51EE /* AppDelegate.m */,
+				F28A3E311EDC5820005E51EE /* Assets.xcassets */,
+				F28A3E321EDC5820005E51EE /* LaunchScreen.storyboard */,
+				F28A3E341EDC5820005E51EE /* Main.storyboard */,
+				F28A3E361EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld */,
+				F28A3E381EDC5820005E51EE /* Info.plist */,
+				F28A3E391EDC5820005E51EE /* main.m */,
+				F28A3E3A1EDC5820005E51EE /* ViewController.h */,
+				F28A3E3B1EDC5820005E51EE /* ViewController.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F28A3E3C1EDC5820005E51EE /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				F28A3E4B1EDC58D8005E51EE /* HttpClient.h */,
+				F28A3E4C1EDC58D8005E51EE /* HttpClient.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		F28A3E3D1EDC5820005E51EE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F28A3E3E1EDC5820005E51EE /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		F28A3E3F1EDC5820005E51EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F28A3E401EDC5820005E51EE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F28A3E411EDC5820005E51EE /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		F28A3E421EDC5820005E51EE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F28A3E501EDC5CA9005E51EE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F2D6CE181EDC4A2200D8EEFC = {
+			isa = PBXGroup;
+			children = (
+				F2D6CE231EDC4A2200D8EEFC /* HybridMenu-iOS */,
+				F2D6CE401EDC4A2200D8EEFC /* HybridMenu-iOSTests */,
+				F2D6CE4B1EDC4A2200D8EEFC /* HybridMenu-iOSUITests */,
+				F2D6CE221EDC4A2200D8EEFC /* Products */,
+				EF78124E6C8A5053E6A36465 /* Pods */,
+				5CF154C8DEA180A9CE82D3FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F2D6CE221EDC4A2200D8EEFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2D6CE211EDC4A2200D8EEFC /* HybridMenu-iOS.app */,
+				F2D6CE3D1EDC4A2200D8EEFC /* HybridMenu-iOSTests.xctest */,
+				F2D6CE481EDC4A2200D8EEFC /* HybridMenu-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2D6CE231EDC4A2200D8EEFC /* HybridMenu-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F28A3E501EDC5CA9005E51EE /* Resource */,
+				F28A3E2D1EDC5820005E51EE /* Utility */,
+				F28A3E2E1EDC5820005E51EE /* Supporting Files */,
+				F28A3E3C1EDC5820005E51EE /* NetWork */,
+				F28A3E3D1EDC5820005E51EE /* Login */,
+				F28A3E3E1EDC5820005E51EE /* DataBase */,
+				F28A3E3F1EDC5820005E51EE /* Common */,
+				F28A3E401EDC5820005E51EE /* Category */,
+				F28A3E411EDC5820005E51EE /* Business */,
+				F28A3E421EDC5820005E51EE /* Base */,
+			);
+			path = "HybridMenu-iOS";
+			sourceTree = "<group>";
+		};
+		F2D6CE401EDC4A2200D8EEFC /* HybridMenu-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2D6CE411EDC4A2200D8EEFC /* HybridMenu_iOSTests.m */,
+				F2D6CE431EDC4A2200D8EEFC /* Info.plist */,
+			);
+			path = "HybridMenu-iOSTests";
+			sourceTree = "<group>";
+		};
+		F2D6CE4B1EDC4A2200D8EEFC /* HybridMenu-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F2D6CE4C1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m */,
+				F2D6CE4E1EDC4A2200D8EEFC /* Info.plist */,
+			);
+			path = "HybridMenu-iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2D6CE201EDC4A2200D8EEFC /* HybridMenu-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2D6CE511EDC4A2200D8EEFC /* Build configuration list for PBXNativeTarget "HybridMenu-iOS" */;
+			buildPhases = (
+				2C7D2A9BEB588715BD961A74 /* [CP] Check Pods Manifest.lock */,
+				F2D6CE1D1EDC4A2200D8EEFC /* Sources */,
+				F2D6CE1E1EDC4A2200D8EEFC /* Frameworks */,
+				F2D6CE1F1EDC4A2200D8EEFC /* Resources */,
+				38D8783DC7C70CBD805A5FE5 /* [CP] Embed Pods Frameworks */,
+				D71BC7535F697AD0BF06901D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HybridMenu-iOS";
+			productName = "HybridMenu-iOS";
+			productReference = F2D6CE211EDC4A2200D8EEFC /* HybridMenu-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2D6CE3C1EDC4A2200D8EEFC /* HybridMenu-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2D6CE541EDC4A2200D8EEFC /* Build configuration list for PBXNativeTarget "HybridMenu-iOSTests" */;
+			buildPhases = (
+				F2D6CE391EDC4A2200D8EEFC /* Sources */,
+				F2D6CE3A1EDC4A2200D8EEFC /* Frameworks */,
+				F2D6CE3B1EDC4A2200D8EEFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2D6CE3F1EDC4A2200D8EEFC /* PBXTargetDependency */,
+			);
+			name = "HybridMenu-iOSTests";
+			productName = "HybridMenu-iOSTests";
+			productReference = F2D6CE3D1EDC4A2200D8EEFC /* HybridMenu-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F2D6CE471EDC4A2200D8EEFC /* HybridMenu-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2D6CE571EDC4A2200D8EEFC /* Build configuration list for PBXNativeTarget "HybridMenu-iOSUITests" */;
+			buildPhases = (
+				F2D6CE441EDC4A2200D8EEFC /* Sources */,
+				F2D6CE451EDC4A2200D8EEFC /* Frameworks */,
+				F2D6CE461EDC4A2200D8EEFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2D6CE4A1EDC4A2200D8EEFC /* PBXTargetDependency */,
+			);
+			name = "HybridMenu-iOSUITests";
+			productName = "HybridMenu-iOSUITests";
+			productReference = F2D6CE481EDC4A2200D8EEFC /* HybridMenu-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2D6CE191EDC4A2200D8EEFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = JohnLee;
+				TargetAttributes = {
+					F2D6CE201EDC4A2200D8EEFC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = JGRNKP3327;
+						ProvisioningStyle = Automatic;
+					};
+					F2D6CE3C1EDC4A2200D8EEFC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = JGRNKP3327;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F2D6CE201EDC4A2200D8EEFC;
+					};
+					F2D6CE471EDC4A2200D8EEFC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = JGRNKP3327;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F2D6CE201EDC4A2200D8EEFC;
+					};
+				};
+			};
+			buildConfigurationList = F2D6CE1C1EDC4A2200D8EEFC /* Build configuration list for PBXProject "HybridMenu-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2D6CE181EDC4A2200D8EEFC;
+			productRefGroup = F2D6CE221EDC4A2200D8EEFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2D6CE201EDC4A2200D8EEFC /* HybridMenu-iOS */,
+				F2D6CE3C1EDC4A2200D8EEFC /* HybridMenu-iOSTests */,
+				F2D6CE471EDC4A2200D8EEFC /* HybridMenu-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2D6CE1F1EDC4A2200D8EEFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28A3E461EDC5820005E51EE /* Main.storyboard in Resources */,
+				F28A3E441EDC5820005E51EE /* Assets.xcassets in Resources */,
+				F28A3E451EDC5820005E51EE /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D6CE3B1EDC4A2200D8EEFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D6CE461EDC4A2200D8EEFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C7D2A9BEB588715BD961A74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		38D8783DC7C70CBD805A5FE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HybridMenu-iOS/Pods-HybridMenu-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D71BC7535F697AD0BF06901D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HybridMenu-iOS/Pods-HybridMenu-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2D6CE1D1EDC4A2200D8EEFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28A3E471EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld in Sources */,
+				F28A3E491EDC5820005E51EE /* main.m in Sources */,
+				F28A3E4D1EDC58D8005E51EE /* HttpClient.m in Sources */,
+				F28A3E4A1EDC5820005E51EE /* ViewController.m in Sources */,
+				F28A3E431EDC5820005E51EE /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D6CE391EDC4A2200D8EEFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2D6CE421EDC4A2200D8EEFC /* HybridMenu_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D6CE441EDC4A2200D8EEFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2D6CE4D1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2D6CE3F1EDC4A2200D8EEFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2D6CE201EDC4A2200D8EEFC /* HybridMenu-iOS */;
+			targetProxy = F2D6CE3E1EDC4A2200D8EEFC /* PBXContainerItemProxy */;
+		};
+		F2D6CE4A1EDC4A2200D8EEFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2D6CE201EDC4A2200D8EEFC /* HybridMenu-iOS */;
+			targetProxy = F2D6CE491EDC4A2200D8EEFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F28A3E321EDC5820005E51EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F28A3E331EDC5820005E51EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F28A3E341EDC5820005E51EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F28A3E351EDC5820005E51EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2D6CE4F1EDC4A2200D8EEFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F2D6CE501EDC4A2200D8EEFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2D6CE521EDC4A2200D8EEFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E26B778B5ECD761CE76F7D85 /* Pods-HybridMenu-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JGRNKP3327;
+				INFOPLIST_FILE = "$(SRCROOT)/HybridMenu-iOS/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F2D6CE531EDC4A2200D8EEFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB26CBC0318A7036BA8A442 /* Pods-HybridMenu-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JGRNKP3327;
+				INFOPLIST_FILE = "$(SRCROOT)/HybridMenu-iOS/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F2D6CE551EDC4A2200D8EEFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JGRNKP3327;
+				INFOPLIST_FILE = "HybridMenu-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HybridMenu-iOS.app/HybridMenu-iOS";
+			};
+			name = Debug;
+		};
+		F2D6CE561EDC4A2200D8EEFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = JGRNKP3327;
+				INFOPLIST_FILE = "HybridMenu-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HybridMenu-iOS.app/HybridMenu-iOS";
+			};
+			name = Release;
+		};
+		F2D6CE581EDC4A2200D8EEFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = JGRNKP3327;
+				INFOPLIST_FILE = "HybridMenu-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "HybridMenu-iOS";
+			};
+			name = Debug;
+		};
+		F2D6CE591EDC4A2200D8EEFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = JGRNKP3327;
+				INFOPLIST_FILE = "HybridMenu-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "HybridMenu-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2D6CE1C1EDC4A2200D8EEFC /* Build configuration list for PBXProject "HybridMenu-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D6CE4F1EDC4A2200D8EEFC /* Debug */,
+				F2D6CE501EDC4A2200D8EEFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2D6CE511EDC4A2200D8EEFC /* Build configuration list for PBXNativeTarget "HybridMenu-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D6CE521EDC4A2200D8EEFC /* Debug */,
+				F2D6CE531EDC4A2200D8EEFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2D6CE541EDC4A2200D8EEFC /* Build configuration list for PBXNativeTarget "HybridMenu-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D6CE551EDC4A2200D8EEFC /* Debug */,
+				F2D6CE561EDC4A2200D8EEFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2D6CE571EDC4A2200D8EEFC /* Build configuration list for PBXNativeTarget "HybridMenu-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D6CE581EDC4A2200D8EEFC /* Debug */,
+				F2D6CE591EDC4A2200D8EEFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F28A3E361EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F28A3E371EDC5820005E51EE /* HybridMenu_iOS.xcdatamodel */,
+			);
+			currentVersion = F28A3E371EDC5820005E51EE /* HybridMenu_iOS.xcdatamodel */;
+			path = HybridMenu_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F2D6CE191EDC4A2200D8EEFC /* Project object */;
+}
