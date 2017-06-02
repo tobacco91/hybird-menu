@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "menu-project",
+    "name": "hybird-menu",
     "script": "www/production.js",
     "cwd": "/root/nodeRoot/hybird-menu",
     "exec_mode": "cluster",
