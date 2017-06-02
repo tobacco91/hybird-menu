@@ -2,7 +2,7 @@
   "apps": [{
     "name": "menu-project",
     "script": "www/production.js",
-    "cwd": "/Users/a91/nodeRoot/menu/menu-project",
+    "cwd": "/root/nodeRoot/hybird-menu",
     "exec_mode": "cluster",
     "instances": 0,
     "max_memory_restart": "1G",
