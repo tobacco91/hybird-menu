@@ -203,7 +203,7 @@ export default class extends Base {
    */
 
   async showCollectAction() {
-      await this.session('userId',1);
+      //await this.session('userId',1);
     let id = await this.session('userId');
     let list = await this.model('collect')
     .personCollect({
