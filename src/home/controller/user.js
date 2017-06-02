@@ -86,7 +86,7 @@ export default class extends Base {
       let info = await this.model('user')
       .addUser({
           user_name    :    user.name,
-          user_password:    think.md5(user.user_password)
+          user_password:    think.md5(user.password)
       });
       if (info.type === 'exist') {
         return this.json(
