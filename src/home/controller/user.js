@@ -71,11 +71,11 @@ export default class extends Base {
                 }
             )
         } else {
-            await this.session('userId',info.user_id);
+            //await this.session('userId',info.user_id);
             return this.json(
                 {
                     status: 200,
-                    message: '成功登陆'
+                    message: {user_id:info.user_id}
                 }
             )
         }
@@ -111,10 +111,8 @@ export default class extends Base {
    * }
    */
   async addOneAction() {
-    let userId = await this.session('user');
-    console.log(userId)
-    console.log(userId == 'undefined')
-    if(userId === 'undefined') {
+    let userId = this.get('user_id');
+    if(userId === '') {
         return this.json(
             {
                 status: 400,
@@ -148,7 +146,7 @@ export default class extends Base {
             let state = await this.model('collect')
             .addCollect({
                 menu_id: addMessage.menu_id,
-                user_id: await this.session('userId')
+                user_id: userId
             });
             if(state.type === 'add') {
                 return this.json(
@@ -178,7 +176,7 @@ export default class extends Base {
    */
   async personAction() {
       //await this.session('userId',1);
-      let id = await this.session('userId');
+      let id = this.get('user_id');
       let userName = await this.model('user')
       .getName({
           user_id: id
@@ -204,7 +202,7 @@ export default class extends Base {
 
   async showCollectAction() {
       //await this.session('userId',1);
-    let id = await this.session('userId');
+    let id = this.get('user_id');
     let list = await this.model('collect')
     .personCollect({
         user_id: id
