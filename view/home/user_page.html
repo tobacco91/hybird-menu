@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>page</title>
+    <link rel="stylesheet" href="/static/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="/static/css/page.css" />
+</head>
+<body>
+    <container>
+        <div class="albums">
+            <div class="img">
+                <img src="/static/img/albums/<%= data[0].menu_albums%>"/>
+            </div>
+            <div class="title"><%= data[0].menu_title%></div>
+            <div class="collect-like">
+                <i class="iconfont icon-liulan" style="font-size:20px;"></i>
+                <span class="look"><%= data[0].menu_like%></span>
+                <span class="time"><%= data[0].write_time%></span>
+                <!--<i class="iconfont icon-shouc01" style="font-size:20px;"></i>
+                <span><%= data[0].menu_collect%></span>-->
+            </div>
+        </div> 
+        <div class="hr"></div>
+        <div class="introduce">
+            <%= data[0].menu_introduce%>
+        </div>
+        <div class="hr"></div>
+        <div class="burden">
+            <div class="top">
+                <i class="iconfont icon-shicai" style="font-size:16px;"></i>
+                <span>食材</span>
+            </div>
+            <div class="more">主要材料:<%= data[0].menu_major%></div>
+            <div class="less">配料:<%= data[0].menu_burden%></div>
+        </div>
+    <div class="cook">
+        <div class="top">
+            <i class="iconfont icon-pengren" style="font-size:16px;"></i>
+                <span>烹饪步骤</span>
+        </div>
+        <ul class="step">
+            <%data[0].step.forEach(function(item) {%>
+                <li class="step-detail">
+                    <p><%= item.step_detail%><p>
+                    <img src="/static/img/step/<%= item.step_img%>" />
+                </li>
+            <%})%>
+        </ul>
+    </div>
+    </container>
+    <bar>
+        <i class="iconfont icon-shouc01 collect" style="font-size:28px;"></i>
+        <i class="iconfont icon-pinglun" style="font-size:28px;"></i>
+    </bar>
+    <script>
+        var menu_id=<%= data[0].menu_id%>;
+        console.log(menu_id);
+    </script>
+    <script src="/static/js/page.js"></script>
+</body>
+</html>

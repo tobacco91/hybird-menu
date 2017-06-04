@@ -39,21 +39,24 @@ export default class extends Base {
         .getPage({
             menu_id: menuId
         });
-        if (think.isEmpty(page)) {
-            return this.json(
-                {
-                    status: 400,
-                    message: '没有获取数据'
-                }
-            )
-        } else {
-            return this.json(
-                {
-                    status: 200,
-                    message: page
-                }
-            )
-        }
+        this.assign('data',page);
+        // if (think.isEmpty(page)) {
+        //     return this.json(
+        //         {
+        //             status: 400,
+        //             message: '没有获取数据'
+        //         }
+        //     )
+        // } else {
+        //     return this.json(
+        //         {
+        //             status: 200,
+        //             message: page
+        //         }
+        //     )
+        // }
+        console.log(this.assign('data'))
+        this.display();
     }
 
     async loginAction() {
@@ -112,6 +115,7 @@ export default class extends Base {
    */
   async addOneAction() {
     let userId = this.get('user_id');
+    console.log(userId)
     if(userId === '') {
         return this.json(
             {

@@ -1,0 +1,109 @@
+html,body {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+ul,div,li {
+    padding: 0;
+    margin: 0; 
+    list-style: none;
+}
+image {
+    border: none;
+}
+.hr {
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 0.01rem solid #D0D0D0;
+
+
+} 
+container {
+    margin-top:4rem;
+    display: block;
+    width: 100%;
+}
+.albums {
+    width: 100%;
+    margin: 2rem 0;
+}
+.img {
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+}
+.img img {
+    width: 100%;  
+    height: auto;      
+}
+
+.title {
+    font-weight: bold;
+    margin: 1rem 2rem;
+    font-size: 20px;
+    height: 2rem;
+}
+
+.collect-like {
+    color: #7B7B7B;
+    font-size: 16px;
+    margin-left: 2rem;
+    display: flex;
+}
+.look {
+    flex:1;
+}
+.time {
+    flex:2;
+}
+.introduce {
+    margin:2rem 2rem;
+    font-size: 14px;
+}
+.burden {
+    margin: 2rem 2rem;
+}
+.burden .top {
+    font-size: 14px;
+}
+.more,.less {
+    margin: 0.5rem 2rem;
+    font-size: 12px;
+}
+.cook {
+    margin: 0 2rem;
+}
+.cook .top {
+    font-size: 14px;
+}
+.step {
+    margin: 0 2rem;
+}
+
+.step-detail {
+    font-size: 12px;
+    overflow: hidden;
+}
+.step-detail img {
+    width: 100%;
+    height: auto;
+}
+bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #ffffff;
+    line-height: 5rem; 
+    padding-left: 3rem;
+    vertical-align:middle;
+    border-top: 0.02rem solid #D0D0D0;
+}
+
+bar i {
+    margin-right: 2rem;
+}
+
