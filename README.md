@@ -1,5 +1,5 @@
 url | args | method
---- | --- | --- | ---
+--- | --- | ---
 http://www.cxy91.cn/user/register | name&password | post
 http://www.cxy91.cn/user/login | name&password | post
 http://www.cxy91.cn/user/list （列表）| sort_id//分类id（1到5） | get
