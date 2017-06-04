@@ -8,14 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CC3A1B549B7364FA03898C20 /* libPods-HybridMenu-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C45A484B8561F0F30B0AD9D7 /* libPods-HybridMenu-iOS.a */; };
+		F20105391EDD4E5A006DC7E5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F20105381EDD4E5A006DC7E5 /* MainTabBarController.m */; };
+		F251E4781EDE458F00DD5404 /* ExampleApp.html in Resources */ = {isa = PBXBuildFile; fileRef = F251E4771EDE458F00DD5404 /* ExampleApp.html */; };
+		F265658A1EDD1631004EEDCC /* LoginEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F26565891EDD1631004EEDCC /* LoginEntry.m */; };
+		F26565931EDD1F2F004EEDCC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F26565911EDD1F2F004EEDCC /* LoginViewController.m */; };
+		F26565941EDD1F2F004EEDCC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26565921EDD1F2F004EEDCC /* LoginViewController.xib */; };
 		F28A3E431EDC5820005E51EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E301EDC5820005E51EE /* AppDelegate.m */; };
 		F28A3E441EDC5820005E51EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28A3E311EDC5820005E51EE /* Assets.xcassets */; };
 		F28A3E451EDC5820005E51EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A3E321EDC5820005E51EE /* LaunchScreen.storyboard */; };
 		F28A3E461EDC5820005E51EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A3E341EDC5820005E51EE /* Main.storyboard */; };
 		F28A3E471EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E361EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld */; };
 		F28A3E491EDC5820005E51EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E391EDC5820005E51EE /* main.m */; };
-		F28A3E4A1EDC5820005E51EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E3B1EDC5820005E51EE /* ViewController.m */; };
 		F28A3E4D1EDC58D8005E51EE /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E4C1EDC58D8005E51EE /* HttpClient.m */; };
+		F2BAFDBF1EE265EF007E103C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BAFDBE1EE265EF007E103C /* BaseViewController.m */; };
+		F2BAFDC21EE26600007E103C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BAFDC11EE26600007E103C /* BaseTableViewController.m */; };
+		F2C570311EE3AA1A00D9FEF4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C570301EE3AA1A00D9FEF4 /* MenuViewController.m */; };
+		F2C570341EE3AA3C00D9FEF4 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C570331EE3AA3C00D9FEF4 /* MineViewController.m */; };
+		F2C570371EE3AA7E00D9FEF4 /* MenuListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C570361EE3AA7E00D9FEF4 /* MenuListModel.m */; };
+		F2C5703A1EE3AB8400D9FEF4 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C570391EE3AB8400D9FEF4 /* RecommendViewController.m */; };
 		F2D6CE421EDC4A2200D8EEFC /* HybridMenu_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D6CE411EDC4A2200D8EEFC /* HybridMenu_iOSTests.m */; };
 		F2D6CE4D1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D6CE4C1EDC4A2200D8EEFC /* HybridMenu_iOSUITests.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +51,15 @@
 		1FB26CBC0318A7036BA8A442 /* Pods-HybridMenu-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridMenu-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HybridMenu-iOS/Pods-HybridMenu-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		C45A484B8561F0F30B0AD9D7 /* libPods-HybridMenu-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HybridMenu-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26B778B5ECD761CE76F7D85 /* Pods-HybridMenu-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridMenu-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HybridMenu-iOS/Pods-HybridMenu-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F20105371EDD4E5A006DC7E5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		F20105381EDD4E5A006DC7E5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		F251E4771EDE458F00DD5404 /* ExampleApp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleApp.html; sourceTree = "<group>"; };
+		F26565881EDD1631004EEDCC /* LoginEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginEntry.h; sourceTree = "<group>"; };
+		F26565891EDD1631004EEDCC /* LoginEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginEntry.m; sourceTree = "<group>"; };
+		F265658B1EDD186F004EEDCC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F26565901EDD1F2F004EEDCC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F26565911EDD1F2F004EEDCC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F26565921EDD1F2F004EEDCC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F28A3E2F1EDC5820005E51EE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F28A3E301EDC5820005E51EE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F28A3E311EDC5820005E51EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,10 +68,20 @@
 		F28A3E371EDC5820005E51EE /* HybridMenu_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HybridMenu_iOS.xcdatamodel; sourceTree = "<group>"; };
 		F28A3E381EDC5820005E51EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28A3E391EDC5820005E51EE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F28A3E3A1EDC5820005E51EE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F28A3E3B1EDC5820005E51EE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F28A3E4B1EDC58D8005E51EE /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		F28A3E4C1EDC58D8005E51EE /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		F2BAFDBD1EE265EF007E103C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		F2BAFDBE1EE265EF007E103C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		F2BAFDC01EE26600007E103C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		F2BAFDC11EE26600007E103C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		F2C5702F1EE3AA1A00D9FEF4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		F2C570301EE3AA1A00D9FEF4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		F2C570321EE3AA3C00D9FEF4 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		F2C570331EE3AA3C00D9FEF4 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		F2C570351EE3AA7E00D9FEF4 /* MenuListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListModel.h; sourceTree = "<group>"; };
+		F2C570361EE3AA7E00D9FEF4 /* MenuListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListModel.m; sourceTree = "<group>"; };
+		F2C570381EE3AB8400D9FEF4 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		F2C570391EE3AB8400D9FEF4 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		F2D6CE211EDC4A2200D8EEFC /* HybridMenu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HybridMenu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D6CE3D1EDC4A2200D8EEFC /* HybridMenu-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HybridMenu-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D6CE411EDC4A2200D8EEFC /* HybridMenu_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridMenu_iOSTests.m; sourceTree = "<group>"; };
@@ -105,6 +134,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F265658C1EDD19EF004EEDCC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F20105371EDD4E5A006DC7E5 /* MainTabBarController.h */,
+				F20105381EDD4E5A006DC7E5 /* MainTabBarController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		F28A3E2D1EDC5820005E51EE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +161,7 @@
 				F28A3E361EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld */,
 				F28A3E381EDC5820005E51EE /* Info.plist */,
 				F28A3E391EDC5820005E51EE /* main.m */,
-				F28A3E3A1EDC5820005E51EE /* ViewController.h */,
-				F28A3E3B1EDC5820005E51EE /* ViewController.m */,
+				F251E4771EDE458F00DD5404 /* ExampleApp.html */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +178,11 @@
 		F28A3E3D1EDC5820005E51EE /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F26565881EDD1631004EEDCC /* LoginEntry.h */,
+				F26565891EDD1631004EEDCC /* LoginEntry.m */,
+				F26565901EDD1F2F004EEDCC /* LoginViewController.h */,
+				F26565911EDD1F2F004EEDCC /* LoginViewController.m */,
+				F26565921EDD1F2F004EEDCC /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -155,6 +197,7 @@
 		F28A3E3F1EDC5820005E51EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F265658B1EDD186F004EEDCC /* PrefixHeader.pch */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -169,6 +212,9 @@
 		F28A3E411EDC5820005E51EE /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				F2C570231EE3AA0B00D9FEF4 /* Menu */,
+				F2C570271EE3AA0B00D9FEF4 /* Mine */,
+				F2C5702B1EE3AA0B00D9FEF4 /* Recommend */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -176,6 +222,10 @@
 		F28A3E421EDC5820005E51EE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F2BAFDBD1EE265EF007E103C /* BaseViewController.h */,
+				F2BAFDBE1EE265EF007E103C /* BaseViewController.m */,
+				F2BAFDC01EE26600007E103C /* BaseTableViewController.h */,
+				F2BAFDC11EE26600007E103C /* BaseTableViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -185,6 +235,107 @@
 			children = (
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		F2C570231EE3AA0B00D9FEF4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F2C570241EE3AA0B00D9FEF4 /* Controller */,
+				F2C570251EE3AA0B00D9FEF4 /* Model */,
+				F2C570261EE3AA0B00D9FEF4 /* View */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		F2C570241EE3AA0B00D9FEF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2C5702F1EE3AA1A00D9FEF4 /* MenuViewController.h */,
+				F2C570301EE3AA1A00D9FEF4 /* MenuViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2C570251EE3AA0B00D9FEF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2C570351EE3AA7E00D9FEF4 /* MenuListModel.h */,
+				F2C570361EE3AA7E00D9FEF4 /* MenuListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2C570261EE3AA0B00D9FEF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2C570271EE3AA0B00D9FEF4 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F2C570281EE3AA0B00D9FEF4 /* Controller */,
+				F2C570291EE3AA0B00D9FEF4 /* Model */,
+				F2C5702A1EE3AA0B00D9FEF4 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		F2C570281EE3AA0B00D9FEF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2C570321EE3AA3C00D9FEF4 /* MineViewController.h */,
+				F2C570331EE3AA3C00D9FEF4 /* MineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2C570291EE3AA0B00D9FEF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2C5702A1EE3AA0B00D9FEF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2C5702B1EE3AA0B00D9FEF4 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				F2C5702C1EE3AA0B00D9FEF4 /* Controller */,
+				F2C5702D1EE3AA0B00D9FEF4 /* Model */,
+				F2C5702E1EE3AA0B00D9FEF4 /* View */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		F2C5702C1EE3AA0B00D9FEF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2C570381EE3AB8400D9FEF4 /* RecommendViewController.h */,
+				F2C570391EE3AB8400D9FEF4 /* RecommendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2C5702D1EE3AA0B00D9FEF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2C5702E1EE3AA0B00D9FEF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F2D6CE181EDC4A2200D8EEFC = {
@@ -212,16 +363,17 @@
 		F2D6CE231EDC4A2200D8EEFC /* HybridMenu-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F265658C1EDD19EF004EEDCC /* Main */,
+				F28A3E421EDC5820005E51EE /* Base */,
+				F28A3E411EDC5820005E51EE /* Business */,
+				F28A3E401EDC5820005E51EE /* Category */,
+				F28A3E3F1EDC5820005E51EE /* Common */,
 				F28A3E501EDC5CA9005E51EE /* Resource */,
 				F28A3E2D1EDC5820005E51EE /* Utility */,
-				F28A3E2E1EDC5820005E51EE /* Supporting Files */,
 				F28A3E3C1EDC5820005E51EE /* NetWork */,
 				F28A3E3D1EDC5820005E51EE /* Login */,
 				F28A3E3E1EDC5820005E51EE /* DataBase */,
-				F28A3E3F1EDC5820005E51EE /* Common */,
-				F28A3E401EDC5820005E51EE /* Category */,
-				F28A3E411EDC5820005E51EE /* Business */,
-				F28A3E421EDC5820005E51EE /* Base */,
+				F28A3E2E1EDC5820005E51EE /* Supporting Files */,
 			);
 			path = "HybridMenu-iOS";
 			sourceTree = "<group>";
@@ -356,6 +508,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F251E4781EDE458F00DD5404 /* ExampleApp.html in Resources */,
+				F26565941EDD1F2F004EEDCC /* LoginViewController.xib in Resources */,
 				F28A3E461EDC5820005E51EE /* Main.storyboard in Resources */,
 				F28A3E441EDC5820005E51EE /* Assets.xcassets in Resources */,
 				F28A3E451EDC5820005E51EE /* LaunchScreen.storyboard in Resources */,
@@ -431,11 +585,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26565931EDD1F2F004EEDCC /* LoginViewController.m in Sources */,
+				F2BAFDBF1EE265EF007E103C /* BaseViewController.m in Sources */,
 				F28A3E471EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld in Sources */,
+				F2C570341EE3AA3C00D9FEF4 /* MineViewController.m in Sources */,
+				F20105391EDD4E5A006DC7E5 /* MainTabBarController.m in Sources */,
+				F2BAFDC21EE26600007E103C /* BaseTableViewController.m in Sources */,
 				F28A3E491EDC5820005E51EE /* main.m in Sources */,
+				F265658A1EDD1631004EEDCC /* LoginEntry.m in Sources */,
 				F28A3E4D1EDC58D8005E51EE /* HttpClient.m in Sources */,
-				F28A3E4A1EDC5820005E51EE /* ViewController.m in Sources */,
+				F2C5703A1EE3AB8400D9FEF4 /* RecommendViewController.m in Sources */,
+				F2C570311EE3AA1A00D9FEF4 /* MenuViewController.m in Sources */,
 				F28A3E431EDC5820005E51EE /* AppDelegate.m in Sources */,
+				F2C570371EE3AA7E00D9FEF4 /* MenuListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +748,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JGRNKP3327;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HybridMenu-iOS/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HybridMenu-iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOS";
@@ -599,6 +763,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JGRNKP3327;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HybridMenu-iOS/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HybridMenu-iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JohnLee.HybridMenu-iOS";

@@ -31,4 +31,5 @@ typedef void (^PrepareExecuteBlock)(void);
                    parameters:(NSDictionary *)parameters
                       success:(void (^)(NSURLSessionDataTask *task))success
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
++ (BOOL) isReachability:(NSString *) strUrl;
 @end
