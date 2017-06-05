@@ -9,5 +9,16 @@
 #import "MenuListModel.h"
 
 @implementation MenuListModel
-
+- (instancetype)initWithDic:(NSDictionary *)dic{
+    self = [self init];
+    if (self) {
+        self.menu_id = dic[@"menu_id"];
+        self.menu_title = dic[@"menu_title"];
+        self.menu_introduce = dic[@"menu_introduce"];
+        self.menu_albums = [ALBUMSAPI stringByAppendingString:dic[@"menu_albums"]];
+        self.menu_like = dic[@"menu_like"];
+        self.menu_collect = dic[@"menu_collect"];
+    }
+    return self;
+}
 @end

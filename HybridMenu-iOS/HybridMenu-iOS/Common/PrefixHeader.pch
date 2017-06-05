@@ -13,6 +13,9 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #if DEBUG
 #define DDLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
 #define NSLog(format, ...) do {                                                                          \
 fprintf(stderr, "<%s : %d> | %s\n",                                           \
 [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
@@ -20,17 +23,21 @@ __LINE__, __func__);                                                        \
 (NSLog)((format), ##__VA_ARGS__);                                           \
 fprintf(stderr, "-------\n");                                               \
 } while (0)
+
 #else
 #define DDLog(xx, ...)     ;
 //#define NSLog(format, ...) ;
 #endif
 
-//#import "HttpClient"
 #import <YYKit.h>
 #import "LoginEntry.h"
 #import "HttpClient.h"
 #import "LoginViewController.h"
 
+//APP INFO
+#define APP_NAME @"Menu"
+#define VERSION @"v1.0.0"
+#define COPYRIGHT @"Copyright @2017 JohnLee All Rights Reserved"
 //注册
 #define REGISTERAPI @"http://www.cxy91.cn/user/register"
 //登录

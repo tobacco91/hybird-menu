@@ -7,15 +7,27 @@
 //
 
 #import "MenuViewController.h"
-
+#import "MenuListViewController.h"
+#import "SegmentView.h"
 @interface MenuViewController ()
-
+@property NSMutableArray <MenuListViewController *>*array;
 @end
 
 @implementation MenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    NSArray *titleArray = @[@"甜品",@"面食",@"素菜",@"养生汤",@"炒菜"];
+    self.array = [NSMutableArray array];
+    for (int i = 0; i<titleArray.count; i++) {
+        MenuListViewController *listVC = [[MenuListViewController alloc]init];
+        listVC.title = titleArray[i];
+        [self.array addObject:listVC];
+    }
+    SegmentView * segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64) andControllers:self.array];
+    [self.view addSubview:segmentView];
+    
     // Do any additional setup after loading the view.
 }
 

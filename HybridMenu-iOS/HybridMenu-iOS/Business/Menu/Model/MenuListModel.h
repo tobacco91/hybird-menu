@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface MenuListModel : NSObject
-
+@property NSNumber *menu_id;
+@property NSString *menu_title;
+@property NSString *menu_introduce;
+@property NSString *menu_albums;
+@property NSNumber *menu_like;
+@property NSNumber *menu_collect;
+- (instancetype)initWithDic:(NSDictionary *)dic;
 @end

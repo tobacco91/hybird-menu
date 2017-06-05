@@ -33,8 +33,8 @@
 
 
 - (void)verifyUserInfo {
-    NSString *userID = [LoginEntry getByUserdefaultWithKey:@"user_id"];
-    NSString *password = [LoginEntry getByUserdefaultWithKey:@"password"];
+//    NSString *userID = [LoginEntry getByUserdefaultWithKey:@"user_id"];
+//    NSString *password = [LoginEntry getByUserdefaultWithKey:@"password"];
 }
 
 

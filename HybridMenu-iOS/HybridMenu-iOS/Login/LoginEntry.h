@@ -10,16 +10,11 @@
 
 @interface LoginEntry : NSObject
 
-+ (BOOL)loginWithUserName:(NSString *)userName
++ (void)loginWithUserName:(NSString *)userName
           passworld:(NSString *)password
 withDictionaryParam:(NSDictionary *)paramDictionary;
 
-+ (BOOL)loginoutWithParamArrayString:(NSArray *) paramArray;
++ (void)loginoutWithParamArrayString:(NSArray *) paramArray;
 
-+ (BOOL)saveByUserdefaultWithDictionary:(NSDictionary *)paramDictionary;
-
-+ (BOOL)saveByUserdefaultWithUserID:(NSString *)user_id;
-
-+ (id)getByUserdefaultWithKey:(NSString *)key;
 
 @end

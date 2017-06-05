@@ -63,7 +63,7 @@
     [manger HEAD:url parameters:parameters success:success failure:failure];
 }
 
-+ (BOOL) isReachability:(NSString *) strUrl
++ (BOOL)isReachability:(NSString *) strUrl
 {
     __block BOOL isReachability = NO;
     

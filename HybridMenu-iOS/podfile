@@ -7,7 +7,4 @@ target 'HybridMenu-iOS' do
 	pod 'YYKit'
 	pod 'MJRefresh'
 	pod 'WebViewJavascriptBridge'
-	pod 'HMSegmentedControl'
 end
-
-
