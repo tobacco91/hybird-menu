@@ -19,6 +19,7 @@
 		F28A3E471EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E361EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld */; };
 		F28A3E491EDC5820005E51EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E391EDC5820005E51EE /* main.m */; };
 		F28A3E4D1EDC58D8005E51EE /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A3E4C1EDC58D8005E51EE /* HttpClient.m */; };
+		F2BA6F261EE6F76500BF34A7 /* MenuCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BA6F251EE6F76500BF34A7 /* MenuCollectionViewController.m */; };
 		F2BAFDBF1EE265EF007E103C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BAFDBE1EE265EF007E103C /* BaseViewController.m */; };
 		F2BAFDC21EE26600007E103C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BAFDC11EE26600007E103C /* BaseTableViewController.m */; };
 		F2C570311EE3AA1A00D9FEF4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C570301EE3AA1A00D9FEF4 /* MenuViewController.m */; };
@@ -30,7 +31,6 @@
 		F2D48EAF1EE3DCED007900EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D48EAE1EE3DCED007900EC /* AppDelegate.m */; };
 		F2D48EB51EE3E0CD007900EC /* DataBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D48EB41EE3E0CD007900EC /* DataBaseHelper.m */; };
 		F2D48EB81EE3E15A007900EC /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D48EB71EE3E15A007900EC /* BaseHandler.m */; };
-		F2D48EBC1EE3E69A007900EC /* MenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D48EBB1EE3E69A007900EC /* MenuListViewController.m */; };
 		F2D48EC11EE3EA3D007900EC /* MenuListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D48EBF1EE3EA3D007900EC /* MenuListCollectionViewCell.xib */; };
 		F2D48EC41EE3EF60007900EC /* LoginHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D48EC31EE3EF60007900EC /* LoginHandler.m */; };
 		F2D48ECA1EE3FF24007900EC /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D48EC91EE3FF24007900EC /* SegmentView.m */; };
@@ -78,6 +78,8 @@
 		F28A3E391EDC5820005E51EE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F28A3E4B1EDC58D8005E51EE /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		F28A3E4C1EDC58D8005E51EE /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		F2BA6F241EE6F76500BF34A7 /* MenuCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCollectionViewController.h; sourceTree = "<group>"; };
+		F2BA6F251EE6F76500BF34A7 /* MenuCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCollectionViewController.m; sourceTree = "<group>"; };
 		F2BAFDBD1EE265EF007E103C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F2BAFDBE1EE265EF007E103C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F2BAFDC01EE26600007E103C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -100,8 +102,6 @@
 		F2D48EB41EE3E0CD007900EC /* DataBaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseHelper.m; sourceTree = "<group>"; };
 		F2D48EB61EE3E15A007900EC /* BaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
 		F2D48EB71EE3E15A007900EC /* BaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
-		F2D48EBA1EE3E69A007900EC /* MenuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListViewController.h; sourceTree = "<group>"; };
-		F2D48EBB1EE3E69A007900EC /* MenuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewController.m; sourceTree = "<group>"; };
 		F2D48EBF1EE3EA3D007900EC /* MenuListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuListCollectionViewCell.xib; sourceTree = "<group>"; };
 		F2D48EC21EE3EF60007900EC /* LoginHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHandler.h; sourceTree = "<group>"; };
 		F2D48EC31EE3EF60007900EC /* LoginHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHandler.m; sourceTree = "<group>"; };
@@ -290,8 +290,8 @@
 			children = (
 				F2C5702F1EE3AA1A00D9FEF4 /* MenuViewController.h */,
 				F2C570301EE3AA1A00D9FEF4 /* MenuViewController.m */,
-				F2D48EBA1EE3E69A007900EC /* MenuListViewController.h */,
-				F2D48EBB1EE3E69A007900EC /* MenuListViewController.m */,
+				F2BA6F241EE6F76500BF34A7 /* MenuCollectionViewController.h */,
+				F2BA6F251EE6F76500BF34A7 /* MenuCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -666,12 +666,12 @@
 				F2D48ECA1EE3FF24007900EC /* SegmentView.m in Sources */,
 				F26565931EDD1F2F004EEDCC /* LoginViewController.m in Sources */,
 				F2BAFDBF1EE265EF007E103C /* BaseViewController.m in Sources */,
-				F2D48EBC1EE3E69A007900EC /* MenuListViewController.m in Sources */,
 				F2D48EC41EE3EF60007900EC /* LoginHandler.m in Sources */,
 				F28A3E471EDC5820005E51EE /* HybridMenu_iOS.xcdatamodeld in Sources */,
 				F2C570341EE3AA3C00D9FEF4 /* MineViewController.m in Sources */,
 				F2D48EA81EE3D627007900EC /* AppUtility.m in Sources */,
 				F20105391EDD4E5A006DC7E5 /* MainTabBarController.m in Sources */,
+				F2BA6F261EE6F76500BF34A7 /* MenuCollectionViewController.m in Sources */,
 				F2BAFDC21EE26600007E103C /* BaseTableViewController.m in Sources */,
 				F28A3E491EDC5820005E51EE /* main.m in Sources */,
 				F265658A1EDD1631004EEDCC /* LoginEntry.m in Sources */,

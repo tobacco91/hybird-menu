@@ -7,27 +7,28 @@
 //
 
 #import "MenuViewController.h"
-#import "MenuListViewController.h"
+#import "MenuCollectionViewController.h"
 #import "SegmentView.h"
 @interface MenuViewController ()
-@property NSMutableArray <MenuListViewController *>*array;
+@property NSMutableArray <MenuCollectionViewController *>*array;
 @end
 
 @implementation MenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     NSArray *titleArray = @[@"甜品",@"面食",@"素菜",@"养生汤",@"炒菜"];
     self.array = [NSMutableArray array];
     for (int i = 0; i<titleArray.count; i++) {
-        MenuListViewController *listVC = [[MenuListViewController alloc]init];
-        listVC.title = titleArray[i];
-        [self.array addObject:listVC];
+        MenuCollectionViewController *vc = [[MenuCollectionViewController alloc]initWithID:@(i+1)];
+        vc.title = titleArray[i];
+        [self.array addObject:vc];
     }
     SegmentView * segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64) andControllers:self.array];
-    [self.view addSubview:segmentView];
     
+    [self.view addSubview:segmentView];
     // Do any additional setup after loading the view.
 }
 
@@ -36,10 +37,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)getData{
-    //1:甜品 2:面食 3:素菜 4:养生汤 5:炒菜
-    
-}
 /*
 #pragma mark - Navigation
 

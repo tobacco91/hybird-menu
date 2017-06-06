@@ -53,7 +53,7 @@ fprintf(stderr, "-------\n");                                               \
 //个人
 #define PERSONAPI   @"http://www.cxy91.cn/user/person"
 //封面图片前缀
-#define ALBUMSAPI   @"http://www.cxy91.cn/static/img/albu ms/"
+#define ALBUMSAPI   @"http://www.cxy91.cn/static/img/albums/"
 //步骤图片前缀
 #define STEPAPI     @"http://www.cxy91.cn/static/img/step/"
 
