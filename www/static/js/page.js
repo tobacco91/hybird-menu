@@ -35,8 +35,6 @@ ajax({
     }
 })
 
-
-
 $('.collect').addEventListener('click', function() {
     ajax({
         url: '/user/add_one?user_id='+user_id+'&type=menu_collect&menu_id='+menu_id,
@@ -44,6 +42,9 @@ $('.collect').addEventListener('click', function() {
         success: function(data) {
             $('.state').innerHTML = data.message;
             $('.state').style.display = 'block';
+            setTimeout(function(){
+                $('.state').style.display = 'none';
+            },1000);
         }
     })
 })
