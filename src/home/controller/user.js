@@ -40,24 +40,9 @@ export default class extends Base {
         .getPage({
             menu_id: menuId
         });
-        let userId = this.get().user_id === undefined ? 'undefined' : this.get().user_id;
+        let userId = this.get('user_id') === '' ? 'undefined' : this.get('user_id');
         this.assign('data',page);
         this.assign({user_id : userId});
-        // if (think.isEmpty(page)) {
-        //     return this.json(
-        //         {
-        //             status: 400,
-        //             message: '没有获取数据'
-        //         }
-        //     )
-        // } else {
-        //     return this.json(
-        //         {
-        //             status: 200,
-        //             message: page
-        //         }
-        //     )
-        // }
         console.log(this.assign('user_id'))
         this.display();
     }
@@ -118,15 +103,6 @@ export default class extends Base {
    */
   async addOneAction() {
     let userId = this.get('user_id');
-    console.log(userId)
-    if(userId === '') {
-        return this.json(
-            {
-                status: 400,
-                message: '请先登录'
-            }
-        )
-    }
     let addMessage = this.get();
     let info = await this.model('menu')
     .updateLike({
@@ -150,6 +126,14 @@ export default class extends Base {
                 }
             )
         } else if(addMessage.type ==='menu_collect') {
+            if(userId === '') {
+                return this.json(
+                    {
+                        status: 400,
+                        message: '请先登录'
+                    }
+                )
+            }
             let state = await this.model('collect')
             .addCollect({
                 menu_id: addMessage.menu_id,
@@ -184,6 +168,14 @@ export default class extends Base {
   async personAction() {
       //await this.session('userId',1);
       let id = this.get('user_id');
+      if(userId === '') {
+        return this.json(
+            {
+                status: 400,
+                message: '请先登录'
+            }
+        )
+      }
       let userName = await this.model('user')
       .getName({
           user_id: id
