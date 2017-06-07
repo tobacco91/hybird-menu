@@ -50,17 +50,15 @@ container {
     color: #7B7B7B;
     font-size: 16px;
     margin-left: 2rem;
-    display: flex;
+    display: -webkit-flex;
 }
 .look {
-    flex:1;
+    -webkit-flex:1;
 }
-.time {
-    flex:2;
-}
+
 .introduce {
     margin:2rem 2rem;
-    font-size: 14px;
+    font-size: 12px;
 }
 .burden {
     margin: 2rem 2rem;

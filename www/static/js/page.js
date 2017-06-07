@@ -21,15 +21,20 @@ var ajax = function(config){
         xhr.send(JSON.stringify(data));
     }
     xhr.onreadystatechange = function() {
-        if(hr.readyState == 4 && xhr.status == 200) {
+        if(xhr.readyState == 4 && xhr.status == 200) {
             success(JsonWebKey.parse(xhr.responseText));
         }
     }
 }
 
 
-// $('.collect').addEventListener('click', function() {
-//     ajax({
-//         url: 'http://www.cxy91.cn/user/add_one?user_id='++'&type=menu_collect&menu_id='+
-//     })
-// })
+$('.collect').addEventListener('click', function() {
+
+    // ajax({
+    //     url: 'http://www.cxy91.cn/user/add_one?user_id='+user_id+'&type=menu_collect&menu_id='+menu_id,
+    //     method: 'get',
+    //     success: function(data) {
+    //         console.log(data)
+    //     }
+    // })
+})

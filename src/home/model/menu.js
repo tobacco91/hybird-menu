@@ -28,11 +28,12 @@ export default class extends think.model.relation {
         .field('menu_id,menu_title,menu_introduce,menu_albums,menu_major,menu_burden,write_time,menu_like,menu_collect,write_id')
         .select();
     }
-    async getList(_id) {
+    async getList(_id,pageNum) {
             return await this.model('menu')
+            .page(pageNum, 10)
             .where(_id).field('menu_id,menu_title,menu_introduce,menu_albums,menu_like,menu_collect')
             .setRelation(false)
-            .select();
+            .countSelect();
     }
 
     async updateLike(_args) {

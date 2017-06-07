@@ -9,11 +9,12 @@ export default class extends Base {
    */
   async listAction(){
     let sortId = this.get('sort_id');
+    let pageNum = this.get('page_num');
     let list = await this.model('menu')
     .getList({
         sort_id: sortId,
         menu_state: 1
-    });
+    },pageNum);
     if (think.isEmpty(list)) {
         return this.json(
             {
@@ -39,7 +40,9 @@ export default class extends Base {
         .getPage({
             menu_id: menuId
         });
+        let userId = this.get().user_id === undefined ? 'undefined' : this.get().user_id;
         this.assign('data',page);
+        this.assign({user_id : userId});
         // if (think.isEmpty(page)) {
         //     return this.json(
         //         {
@@ -55,7 +58,7 @@ export default class extends Base {
         //         }
         //     )
         // }
-        console.log(this.assign('data'))
+        console.log(this.assign('user_id'))
         this.display();
     }
 
@@ -156,7 +159,7 @@ export default class extends Base {
                 return this.json(
                     {
                         status: 200,
-                        message: '操作成功'
+                        message: '收藏成功'
                     }
                 )
             } else if (state.type === 'exist') {
