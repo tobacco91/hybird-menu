@@ -43,7 +43,6 @@ export default class extends Base {
         let userId = this.get('user_id') === '' ? 'undefined' : this.get('user_id');
         this.assign('data',page);
         this.assign({user_id : userId});
-        console.log(this.assign('user_id'))
         this.display();
     }
 
@@ -221,6 +220,12 @@ export default class extends Base {
             }
         )
     }
+  }
+
+
+  async getComment() {
+      let user_id = this.get('user_id');
+      let menu_id = this.get('menu_id');
   }
 
 }
