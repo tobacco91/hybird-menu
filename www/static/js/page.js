@@ -86,7 +86,7 @@ $('.leave').addEventListener('click',function() {
 	
             /* Initialize your app here */
 
-            bridge.registerHandler('JS Echo', function(data, responseCallback) {
+            bridge.registerHandler('comment', function(data, responseCallback) {
                 console.log("JS Echo called with:", data)
                 responseCallback(data)
             })
