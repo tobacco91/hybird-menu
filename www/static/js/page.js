@@ -27,6 +27,19 @@ var ajax = function(config){
     }
 }
 
+var createIframe = function(url) {
+    var iframe = document.createElement('iframe');
+    iframe.width = '1px';
+    iframe.height = '1px';
+    iframe.display = 'none';
+    iframe.src = url;
+    document.body.appendChild(iframe);
+    setTimeout(function() {
+        iframe.remove();
+    },100);
+}
+
+
 ajax({
     url: '/user/add_one?&type=menu_like&menu_id='+menu_id,
     method: 'get',
@@ -44,7 +57,19 @@ $('.collect').addEventListener('click', function() {
             $('.state').style.display = 'block';
             setTimeout(function(){
                 $('.state').style.display = 'none';
-            },1000);
+            },2000);
         }
     })
 })
+
+$('.leave').addEventListener('click',function() {
+    if(user_id === '') {
+        $('.state').innerHTML = '请先登录';
+        $('.state').style.display = 'block';
+        setTimeout(function(){
+            $('.state').style.display = 'none';
+        },2000);
+    } else {
+         createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
+    }
+});
