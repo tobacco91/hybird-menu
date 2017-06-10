@@ -226,6 +226,8 @@ export default class extends Base {
   async getComment() {
       let user_id = this.get('user_id');
       let menu_id = this.get('menu_id');
+      let content = this.get('content');
+      
   }
 
 }
