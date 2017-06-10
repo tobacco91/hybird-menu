@@ -90,7 +90,7 @@ $('.leave').addEventListener('click',function() {
                 console.log("JS Echo called with:", data)
                 responseCallback(data)
             })
-            bridge.callHandler('ObjC Echo', {'key':'value'}, function responseCallback(responseData) {
+            bridge.callHandler('comment', {'key':'value'}, function responseCallback(responseData) {
                 console.log("JS received response:", responseData)
             })
         })
