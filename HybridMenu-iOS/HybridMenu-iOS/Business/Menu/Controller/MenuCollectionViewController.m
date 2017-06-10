@@ -7,13 +7,16 @@
 //
 
 #import "MenuCollectionViewController.h"
-#import <MJRefresh/MJRefresh.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "MenuListModel.h"
 #import "MenuListCollectionViewCell.h"
+#import "LoginHandler.h"
+#import "MenuWebViewController.h"
 @interface MenuCollectionViewController ()
-@property NSMutableArray *dataArray;
+@property NSMutableArray <MenuListModel *>*dataArray;
 @property NSNumber *sort_id;
+@property NSInteger page;
+@property MBProgressHUD *hud;
+@property UIView *whiteView;
 @end
 
 static NSString * const reuseIdentifier = @"MenuListCell";
@@ -24,6 +27,7 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     self = [self initWithCollectionViewLayout:[UICollectionViewLayout new]];
     if (self) {
         self.sort_id = sord_id;
+        self.dataArray = [NSMutableArray array];
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
         layout.sectionInset = UIEdgeInsetsMake(12, 12, 12, 12);
         self.collectionView.collectionViewLayout = layout;
@@ -34,8 +38,17 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     [super viewDidLoad];
     [self.collectionView registerNib:[UINib nibWithNibName:@"MenuListCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
-    self.collectionView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
-    [self headerRefresh];
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
+    self.whiteView = [[UIWebView alloc]initWithFrame:CGRectMake(0, HEADBARHEIGHT, SCREENWIDTH, SCREENHEIGHT-HEADBARHEIGHT-TABBARHEIGHT)];
+    self.whiteView.backgroundColor = [UIColor whiteColor];
+    self.hud = [MBProgressHUD showHUDAddedTo:self.whiteView animated:YES];
+    [self.view addSubview:self.whiteView];
+    
+
+    
+    self.collectionView.mj_header.hidden = YES;
+    self.collectionView.mj_footer.hidden = YES;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -44,36 +57,63 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setWhiteViewFrame:(CGRect)frame{
+    self.whiteView.frame = frame;
+}
+
 - (void)headerRefresh{
-    self.dataArray = [NSMutableArray array];
+    self.page = 1;
     [self getData];
 }
 
 - (void)footerRefresh{
-    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+    self.page++;
+    [self getData];
+}
+
+- (void)loadData{
+    if (self.whiteView.hidden == NO) {
+        [self headerRefresh];
+    }
 }
 
 - (void)getData{
     //1:甜品 2:面食 3:素菜 4:养生汤 5:炒菜
-    NSDictionary *paramters = @{@"sort_id":self.sort_id};
+    NSDictionary *paramters = @{@"sort_id":self.sort_id,
+                                @"page_num":@(self.page)};
     HttpClient *client = [HttpClient defaultClient];
     [client requestWithPath:LISTAPI method:HttpRequestGet parameters:paramters prepareExecute:^{
         
     } progress:^(NSProgress *progress) {
         
     } success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSArray *array = responseObject[@"message"];
+        [self.hud hideAnimated:YES];
+        [self.whiteView removeFromSuperview];
+        if (self.page == 1) {
+            self.dataArray = [NSMutableArray array];
+        }
+        NSArray *array = responseObject[@"message"][@"data"];
+        self.page = [responseObject[@"message"][@"currentPage"] integerValue];
         for (int i = 0 ; i<array.count; i++) {
             MenuListModel *model = [[MenuListModel alloc]initWithDic:array[i]];
             [self.dataArray addObject:model];
         }
+        
+        self.collectionView.mj_header.hidden = NO;
+        self.collectionView.mj_footer.hidden = NO;
+        
         [self.collectionView reloadData];
         [self.collectionView.mj_header endRefreshing];
-        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        if (self.page == [responseObject[@"message"][@"totalPages"] integerValue]) {
+            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        }
+        else{
+            [self.collectionView.mj_footer endRefreshing];
+        }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self.collectionView.mj_header endRefreshing];
-        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        [self.collectionView.mj_footer endRefreshing];
     }];
     
 }
@@ -98,13 +138,29 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     // Configure the cell
     cell.likeLabel.text = model.menu_like.stringValue;
     cell.collectLabel.text = model.menu_collect.stringValue;
+    [cell.collectBtn addTarget:self action:@selector(collectAction) forControlEvents:UIControlEventTouchUpInside];
     return cell;
+}
+
+- (void)collectAction{
+    if ([UserDefaultUtility valueWithKey:@"userName"]==nil) {
+        [LoginHandler noLogin:self];
+    }
+    else{
+        
+    }
 }
 
 
 
 #pragma mark <UICollectionViewDelegate>
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSNumber *menu_id = self.dataArray[indexPath.row].menu_id;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.cxy91.cn/user/page?menu_id=%@&user_id=%@",menu_id,[UserDefaultUtility valueWithKey:@"user_id"]]];
+    MenuWebViewController *vc = [[MenuWebViewController alloc]initWithRequest:[NSURLRequest requestWithURL:url]];
+    vc.title = self.dataArray[indexPath.row].menu_title;
+    [self.parentViewController.navigationController pushViewController:vc animated:YES];
+}
 /*
  // Uncomment this method to specify if the specified item should be highlighted during tracking
  - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

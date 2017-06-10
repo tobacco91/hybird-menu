@@ -9,7 +9,7 @@
 #import "MenuViewController.h"
 #import "MenuCollectionViewController.h"
 #import "SegmentView.h"
-@interface MenuViewController ()
+@interface MenuViewController ()<SegmentViewScrollerViewDelegate>
 @property NSMutableArray <MenuCollectionViewController *>*array;
 @end
 
@@ -23,12 +23,14 @@
     self.array = [NSMutableArray array];
     for (int i = 0; i<titleArray.count; i++) {
         MenuCollectionViewController *vc = [[MenuCollectionViewController alloc]initWithID:@(i+1)];
+        [self addChildViewController:vc];
         vc.title = titleArray[i];
         [self.array addObject:vc];
     }
-    SegmentView * segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64) andControllers:self.array];
-    
+    SegmentView * segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, HEADBARHEIGHT, SCREENWIDTH, SCREENHEIGHT-HEADBARHEIGHT-TABBARHEIGHT) andControllers:self.array];
+    segmentView.eventDelegate = self;
     [self.view addSubview:segmentView];
+    [self.array[0] loadData];
     // Do any additional setup after loading the view.
 }
 
@@ -37,6 +39,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)eventWhenScrollSubViewWithIndex:(NSInteger)index{
+    [self.array[index] loadData];
+}
 /*
 #pragma mark - Navigation
 

@@ -29,7 +29,11 @@ fprintf(stderr, "-------\n");                                               \
 //#define NSLog(format, ...) ;
 #endif
 
-#import <YYKit.h>
+#import <YYKit/YYKit.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UserDefaultUtility.h"
 #import "LoginEntry.h"
 #import "HttpClient.h"
 #import "LoginViewController.h"
@@ -60,8 +64,10 @@ fprintf(stderr, "-------\n");                                               \
 
 #define SCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
-#define NVGBARHEIGHT self.navigationController.navigationBar.frame.size.height
-#define TABBARHEIGHT self.tabBarController.tabBar.frame.size.height
-#define STATUSBARHEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+#define NVGBARHEIGHT (self.navigationController.navigationBar.frame.size.height)
+#define STATUSBARHEIGHT ([[UIApplication sharedApplication] statusBarFrame].size.height)
+#define HEADBARHEIGHT (NVGBARHEIGHT+STATUSBARHEIGHT)
+#define TABBARHEIGHT (self.tabBarController.tabBar.frame.size.height)
+#define MAIN_COLOR  [UIColor colorWithRed:84/255.0 green:172/255.0 blue:255/255.0 alpha:1]
 
 #endif /* PrefixHeader_pch */

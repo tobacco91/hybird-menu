@@ -55,10 +55,9 @@
         btn.tag = i;
         btn.titleLabel.font = [UIFont systemFontOfSize:15];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [btn setTitleColor:MAIN_COLOR forState:UIControlStateSelected];
+        [btn setTitleColor:MAIN_COLOR forState:UIControlStateSelected];
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         if (i == 0) {
-//            _currentSelectBtn = btn;
             btn.selected = YES;
             _currentIndex = 0;
         }
@@ -66,7 +65,7 @@
         [_btnArray addObject:btn];
     }
     _sliderView = [[UIView alloc]initWithFrame:CGRectMake(0, kTitleHeight-2, self.titleBtnWidth, 2)];
-    _sliderView.backgroundColor = [UIColor blueColor];
+    _sliderView.backgroundColor = MAIN_COLOR;
     
     [_titleScrollView addSubview:cuttingLine];
     [_titleScrollView addSubview:self.sliderView];
@@ -115,16 +114,14 @@
             self.currentIndex = currentIndex;
             self.btnArray[self.currentIndex].selected = YES;
             _sliderView.frame = CGRectMake(self.currentIndex * _titleBtnWidth, kTitleHeight - 2, _titleBtnWidth, 2);
-//            CGRect rect = self.btnArray[self.currentIndex].frame;
             CGPoint contentOffset = self.titleScrollView.contentOffset;
             if (self.btnArray[self.currentIndex].frame.origin.x < self.width/2) {
                 [_titleScrollView setContentOffset:CGPointMake(0, contentOffset.y) animated:YES];
             } else if (self.titleScrollView.contentSize.width - self.btnArray[self.currentIndex].frame.origin.x <= self.width/2) {
                 [_titleScrollView setContentOffset:CGPointMake(self.controllers.count*_titleBtnWidth-self.width, contentOffset.y) animated:YES];
             } else {
-                [_titleScrollView setContentOffset:CGPointMake(self.btnArray[self.currentIndex].frame.origin.x-self.width/2+_titleBtnWidth/2, contentOffset.y) animated:YES];
+                [_titleScrollView setContentOffset:CGPointMake(self.btnArray[self.currentIndex].frame.origin.x-self.width/2+self.titleBtnWidth/2, contentOffset.y) animated:YES];
             }
-
         } completion:nil];
     }
     

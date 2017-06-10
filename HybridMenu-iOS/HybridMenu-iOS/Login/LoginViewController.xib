@@ -14,7 +14,7 @@
                 <outlet property="accountTextField" destination="oOh-Cb-lTp" id="IlR-yy-lNH"/>
                 <outlet property="loginBtn" destination="kKb-48-SzI" id="Xmg-rq-xaw"/>
                 <outlet property="passwordTextField" destination="hXq-F4-yoR" id="8Ge-DW-K9E"/>
-                <outlet property="skipBtn" destination="tmd-00-P7h" id="Vkt-aS-y9n"/>
+                <outlet property="registerBtn" destination="9Js-re-ynl" id="PBZ-pC-m1D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,23 +42,23 @@
                     </constraints>
                     <state key="normal" title="登录"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmd-00-P7h">
-                    <rect key="frame" x="286" y="434" width="31" height="30"/>
-                    <state key="normal" title="跳过"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Js-re-ynl">
+                    <rect key="frame" x="58" y="434" width="31" height="30"/>
+                    <state key="normal" title="注册"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="oOh-Cb-lTp" firstAttribute="trailing" secondItem="hXq-F4-yoR" secondAttribute="trailing" id="C1B-vh-3WS"/>
+                <constraint firstItem="9Js-re-ynl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="58" id="H9O-J0-ROC"/>
                 <constraint firstItem="oOh-Cb-lTp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="R5t-8d-UgO"/>
-                <constraint firstAttribute="trailing" secondItem="tmd-00-P7h" secondAttribute="trailing" constant="58" id="bII-c5-T9t"/>
                 <constraint firstItem="kKb-48-SzI" firstAttribute="top" secondItem="hXq-F4-yoR" secondAttribute="bottom" constant="60" id="cJE-bH-WJt"/>
                 <constraint firstItem="oOh-Cb-lTp" firstAttribute="leading" secondItem="hXq-F4-yoR" secondAttribute="leading" id="eYu-UR-0Fs"/>
                 <constraint firstItem="hXq-F4-yoR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="290" id="jr8-7b-o6F"/>
-                <constraint firstAttribute="bottom" secondItem="tmd-00-P7h" secondAttribute="bottom" constant="203" id="mJr-Xw-x91"/>
                 <constraint firstItem="hXq-F4-yoR" firstAttribute="centerX" secondItem="kKb-48-SzI" secondAttribute="centerX" id="obv-18-x02"/>
                 <constraint firstItem="oOh-Cb-lTp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="ocf-h5-hWx"/>
                 <constraint firstItem="oOh-Cb-lTp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="tBq-d7-lBP"/>
+                <constraint firstAttribute="bottom" secondItem="9Js-re-ynl" secondAttribute="bottom" constant="203" id="wdY-jd-NM9"/>
             </constraints>
             <point key="canvasLocation" x="102.5" y="87.5"/>
         </view>

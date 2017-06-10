@@ -10,12 +10,9 @@
 #import "UserDefaultUtility.h"
 @implementation LoginEntry
 + (void)loginWithUserName:(NSString *)userName passworld:(NSString *)password withDictionaryParam:(NSDictionary *)paramDictionary{
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:userName forKey:@"userName"];
-    [userDefaults setObject:password forKey:@"password"];
-    
-    
+    [UserDefaultUtility saveValue:userName forKey:@"userName"];
+    [UserDefaultUtility saveValue:password forKey:@"password"];
+    [UserDefaultUtility saveParameter:paramDictionary];
 }
 
 + (void)loginoutWithParamArrayString:(NSArray *) paramArray{

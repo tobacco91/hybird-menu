@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     MainTabBarController *mainTabBarController = [[MainTabBarController alloc]init];
     self.window.rootViewController = mainTabBarController;
     self.window.backgroundColor = [UIColor whiteColor];

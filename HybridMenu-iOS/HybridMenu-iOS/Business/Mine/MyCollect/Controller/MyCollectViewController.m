@@ -1,18 +1,18 @@
 //
-//  MineViewController.m
+//  MyCollectViewController.m
 //  HybridMenu-iOS
 //
-//  Created by 李展 on 2017/6/4.
+//  Created by 李展 on 2017/6/7.
 //  Copyright © 2017年 JohnLee. All rights reserved.
 //
 
-#import "MineViewController.h"
+#import "MyCollectViewController.h"
 
-@interface MineViewController ()
-@property UITableView *tableView;
+@interface MyCollectViewController ()
+
 @end
 
-@implementation MineViewController
+@implementation MyCollectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

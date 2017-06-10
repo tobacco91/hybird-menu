@@ -9,5 +9,5 @@
 #import "BaseHandler.h"
 
 @interface LoginHandler : BaseHandler
-
++ (void)noLogin:(UIViewController *)viewController;
 @end

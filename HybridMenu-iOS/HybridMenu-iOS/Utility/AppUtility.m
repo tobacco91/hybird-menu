@@ -8,7 +8,6 @@
 
 #import "AppUtility.h"
 #import <CommonCrypto/CommonDigest.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 #define DEFAULT_VOID_COLOR [UIColor whiteColor]
 
 @implementation AppUtility

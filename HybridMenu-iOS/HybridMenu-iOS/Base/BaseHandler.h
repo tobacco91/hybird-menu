@@ -24,4 +24,8 @@ typedef void (^SuccessBlock)(id obj);
  */
 typedef void (^FailedBlock)(id obj);
 
+@property CompleteBlock completeBlock;
+@property SuccessBlock  successBlock;
+@property FailedBlock   failedBlock;
+
 @end

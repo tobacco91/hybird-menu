@@ -10,4 +10,6 @@
 
 @interface MenuCollectionViewController : BaseCollectionViewController
 - (instancetype)initWithID:(NSNumber *)sord_id;
+- (void)loadData;
+- (void)setWhiteViewFrame:(CGRect)frame;
 @end
