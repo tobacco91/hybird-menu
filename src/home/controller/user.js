@@ -168,7 +168,7 @@ export default class extends Base {
    */
   async personAction() {
       //await this.session('userId',1);
-      let id = this.get('user_id');
+      let userId = this.get('user_id');
       if(userId === '') {
         return this.json(
             {
