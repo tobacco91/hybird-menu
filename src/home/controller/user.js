@@ -271,21 +271,10 @@ export default class extends Base {
   }
 
   async getComment(menu_id) {
-      //let menu_id = this.get('menu_id');
       let data = await this.model('comment')
       .getComment({
           menu_id: menu_id
       });
       return data;
-      //return this.json({message:data});
-  }
-    async getCommentAction() {
-      let menu_id = this.get('menu_id');
-      let data = await this.model('comment')
-      .getComment({
-          menu_id: menu_id
-      });
-      //return data;
-      return this.json({message:data});
   }
 }
