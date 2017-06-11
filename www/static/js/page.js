@@ -82,7 +82,7 @@ $('.leave').addEventListener('click',function() {
             $('.state').style.display = 'none';
         },2000);
     } else {
-         createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
+         //createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
          setupWebViewJavascriptBridge(function(bridge) {
 	
             /* Initialize your app here */
@@ -98,3 +98,14 @@ $('.leave').addEventListener('click',function() {
 
     }
 });
+
+$('.comment-list').addEventListener('click',function(e){
+    //console.log(this.className)
+    //console.log(e.target.getAttribute('comment_id'))
+    if(e.target && e.target.id === 'comment') {
+        var comment_id = e.target.getAttribute('comment_id');
+        var comment_name = e.target.parentNode.children[0].innerHTML;
+        createIframe('menu://reply?user_id='+user_id+'&comment_id='+comment_id+'&comment_name='+comment_name);
+    }
+    
+})
