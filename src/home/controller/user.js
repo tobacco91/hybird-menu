@@ -168,8 +168,8 @@ export default class extends Base {
    */
   async personAction() {
       //await this.session('userId',1);
-      let userId = this.get('user_id');
-      if(userId === '') {
+      let id = this.get('user_id');
+      if(id === '') {
         return this.json(
             {
                 status: 400,
