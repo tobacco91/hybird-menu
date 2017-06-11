@@ -40,7 +40,9 @@ export default class extends Base {
         .getPage({
             menu_id: menuId
         });
+        let comment = await this.getComment(menuId);
         let userId = this.get('user_id') === '' ? 'undefined' : this.get('user_id');
+        this.assign('comment',comment);
         this.assign('data',page);
         this.assign({user_id : userId});
         this.display();
@@ -222,12 +224,68 @@ export default class extends Base {
     }
   }
 
-
-  async getComment() {
+  
+  async addCommentAction() {
       let user_id = this.get('user_id');
       let menu_id = this.get('menu_id');
       let content = this.get('content');
-      
+      let time =  new Date();
+      let userName = await this.model('user')
+      .getName({
+          user_id: user_id
+      });
+      let info = await this.model('comment')
+      .addComment({
+          write_id: user_id,
+          write_name: userName.user_name,
+          menu_id: menu_id,
+          comment_detail: content
+      });
+      return this.json(
+            {
+                status: 200,
+                message: '评论成功(•̀ᴗ•́)و '
+            })
   }
 
+
+  async addReplyAction() {
+     let user_id = this.get('user_id');
+     let comment_id = this.get('comment_id');
+     let content = this.get('content');
+     let userName = await this.model('user')
+      .getName({
+          user_id: user_id
+      });
+     await this.model('reply')
+     .addReply({
+          write_id: user_id,
+          write_name: userName.user_name,
+          reply_detail: content,
+          comment_id : comment_id
+     }) 
+    return this.json({
+        status: 200,
+        message: '回复成功(•̀ᴗ•́)و '
+    })
+  }
+
+  async getComment(menu_id) {
+      //let menu_id = this.get('menu_id');
+      let data = await this.model('comment')
+      .getComment({
+          menu_id: menu_id
+      });
+      return data;
+      //return this.json({message:data});
+  }
+    async getCommentAction() {
+      let menu_id = this.get('menu_id');
+      let data = await this.model('comment')
+      .getComment({
+          menu_id: menu_id
+      });
+      //return data;
+      return this.json({message:data});
+  }
 }

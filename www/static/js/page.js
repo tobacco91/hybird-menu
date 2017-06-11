@@ -73,20 +73,7 @@ function setupWebViewJavascriptBridge(callback) {
 	document.documentElement.appendChild(WVJBIframe);
 	setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
 }
-        setupWebViewJavascriptBridge(function(bridge) {
-	
-            /* Initialize your app here */
-
-            bridge.registerHandler('comment', function(data, responseCallback) {
-                console.log("JS Echo called with:", data)
-                responseCallback(data)
-            })
-            bridge.callHandler('comment', {'key':'value'}, function responseCallback(responseData) {
-                console.log("JS received response:", responseData)
-            })
-        })
-
-
+        
 $('.leave').addEventListener('click',function() {
     if(user_id === '') {
         $('.state').innerHTML = '请先登录';
@@ -95,7 +82,7 @@ $('.leave').addEventListener('click',function() {
             $('.state').style.display = 'none';
         },2000);
     } else {
-         //createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
+         createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
          setupWebViewJavascriptBridge(function(bridge) {
 	
             /* Initialize your app here */

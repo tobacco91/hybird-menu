@@ -33,21 +33,45 @@
             <div class="more">主要材料:<%= data[0].menu_major%></div>
             <div class="less">配料:<%= data[0].menu_burden%></div>
         </div>
-    <div class="cook">
-        <div class="top">
-            <i class="iconfont icon-pengren" style="font-size:16px;"></i>
-                <span>烹饪步骤</span>
+        <div class="cook">
+            <div class="top">
+                <i class="iconfont icon-pengren" style="font-size:16px;"></i>
+                    <span>烹饪步骤</span>
+            </div>
+            <ul class="step">
+                <%data[0].step.forEach(function(item) {%>
+                    <li class="step-detail">
+                        <p><%= item.step_detail%><p>
+                        <img src="/static/img/step/<%= item.step_img%>" />
+                    </li>
+                <%})%>
+            </ul>
         </div>
-        <ul class="step">
-            <%data[0].step.forEach(function(item) {%>
-                <li class="step-detail">
-                    <p><%= item.step_detail%><p>
-                    <img src="/static/img/step/<%= item.step_img%>" />
-                </li>
-            <%})%>
-        </ul>
-    </div>
-    <div class="comment" name="comment">留言</div>
+        <div class="hr3"></div>
+        <div class="comment" id="comment">
+            <i class="iconfont icon-pinglun" style="font-size:18px;"></i>
+            <span>评论</span>
+            <ul class="comment-list">
+                <%comment.forEach(function(item) {%>
+                    <li class="comment-block">
+                        <span class="comment-name"><%= item.write_name%></span>
+                        <p class="comment-detail"><%= item.comment_detail%></p>
+                        <i class="iconfont icon-pinglun comment-icon" style="font-size:13px;">回复</i>
+                        <span class="comment-time"><%= format(item.comment_time)%></span>
+                        <div class="clean"></div>
+                        <ul class="block-ul">
+                            <%item.reply.forEach(function(e) {%>
+                            <li>
+                                <span class="block-ul-name"><%= e.write_name%>：</span>
+                                <span class="block-ul-detail">111111111111111111111111111111111111111111111111<%= e.reply_detail%></span>
+                                <p><%= format(e.reply_time)%></p>
+                            </li>
+                            <%})%>
+                        </ul>
+                    </li>
+                <%})%>
+            </ul>
+        </div>
     </container>
     <state class="state">
     </state>

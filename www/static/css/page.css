@@ -5,7 +5,8 @@ html,body {
     width: 100%;
     height: 100%;
 }
-ul,div,li {
+a,a:hover{ text-decoration:none; color:#333}
+ul,div,li,p {
     padding: 0;
     margin: 0; 
     list-style: none;
@@ -86,10 +87,7 @@ container {
     width: 100%;
     height: auto;
 }
-.comment {
-    width: 100%;
-    height: 2rem;
-}
+
 bar {
     display: block;
     position: fixed;
@@ -98,24 +96,27 @@ bar {
     height: 5rem;
     background-color: #ffffff;
     line-height: 5rem; 
-    padding: 0 3rem 0 3rem;
-    vertical-align:middle;
+    padding: 0 2rem 0 3rem;
+    box-sizing: border-box;
     border-top: 0.02rem solid #D0D0D0;
 }
 .leave {
+    padding-left: 0.5rem;
     float: right;
     border-radius: 0.5rem;
     background-color: #f0f0f0;
-    margin: 1.25rem 4rem 0 0;
+    margin-top: 1.25rem;
     outline:none;
     border: none;
-    width: 14rem;
+    width: 10rem;
     height: 2.5rem;
     vertical-align: middle;
 }
 bar i {
-    margin-right: 2rem;
     float: left;
+}
+.collect {
+    margin-right: 2rem;
 }
 
 state {
@@ -133,5 +134,62 @@ state {
     background-color: #000000;
     display: none;
 }
+.hr3 {
+    background-color: #fcfcfc;
+    width: 100%;
+    height: 0.6rem;
+}
+.comment {
+    width:100%;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    margin:1rem 0 6rem 0;
+    font-size: 18px;
+}
+.comment-list {
+    font-size: 16px;
+    padding: 1rem 2rem;
+}
+.comment-icon {
+    float: left;
+    color: #7B7B7B;
+}
+.comment-time {
+    font-size: 13px;
+    float: right;
+    color: #7B7B7B;
+}
+.clean {
+    clear: both;
+}
 
+.comment-detail {
+    margin: 0.5rem 0 0.5rem 0;
+}
+.block-ul {
+    padding: 0.5rem 0 2rem 2rem;
+}
+/*.block-ul li:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}*/
+.block-ul p {
+    position: relative;
+    font-size: 13px;
+    right: 0;
+    color:  #7B7B7B;
+    text-align: right;
+}
+.block-ul-name {
+    color: #000000;
+}
+.block-ul-detail {
+    width: 100%;
+    color: #7B7B7B;
+    
+word-break: break-all;
 
+}
