@@ -277,4 +277,11 @@ export default class extends Base {
       });
       return data;
   }
+
+
+  webviewAction() {
+      return this.json({
+          message: '有毒啊= ='
+      });
+  }
 }

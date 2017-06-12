@@ -37,7 +37,7 @@ var createIframe = function(url) {
     document.body.appendChild(iframe);
     setTimeout(function() {
         iframe.remove();
-    },100);
+    },0);
 }
 
 
@@ -109,3 +109,6 @@ $('.comment-list').addEventListener('click',function(e){
     }
     
 })
+
+createIframe('/user/webview');
+createIframe('objc:menu://reply?user_id='+user_id);
