@@ -96,7 +96,7 @@ export default class extends Base {
         )
     }
   }
-  /**点赞or收藏
+  /**浏览量or收藏
    * get{
    * menu_id
    * type:menu_like/menu_collect
@@ -224,7 +224,7 @@ export default class extends Base {
     }
   }
 
-  
+
   async addCommentAction() {
       let user_id = this.get('user_id');
       let menu_id = this.get('menu_id');

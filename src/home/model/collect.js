@@ -3,23 +3,6 @@
  * model
  */
 export default class extends think.model.base {
-    // init(...args){
-    //     super.init(...args);
-
-    //     this.relation = {
-    //         menu: {
-    //             type: think.model.HAS_ONE,
-    //             model: 'menu',
-    //             name: 'menu_id',
-    //             key: 'menu_id',
-    //             fkey: 'menu_id',
-    //             where: {
-    //                 menu_state : 1
-    //             },
-    //             field: 'menu_id,menu_title,menu_introduce,menu_albums,menu_like,menu_collect',
-    //         }
-    //     }
-    // }
     async addCollect(_id) {
         return await this.model('collect')
         //.setRelation(false)
