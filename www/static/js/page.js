@@ -42,8 +42,12 @@ var createIframe = function(url) {
 
 
 ajax({
-    url: '/user/add_one?&type=menu_like&menu_id='+menu_id,
-    method: 'get',
+    url: '/user/add_one',
+    method: 'post',
+    data: {
+        type:'menu_like',
+        menu_id: menu_id
+    },
     success: function(data) {
         console.log(data)
     }
@@ -51,8 +55,13 @@ ajax({
 
 $('.collect').addEventListener('click', function() {
     ajax({
-        url: '/user/add_one?user_id='+user_id+'&type=menu_collect&menu_id='+menu_id,
-        method: 'get',
+        url: '/user/add_one',
+        method: 'post',
+        data: {
+            user_id: user_id,
+            type: 'menu_collect',
+            menu_id: menu_id
+        },
         success: function(data) {
             $('.state').innerHTML = data.message;
             $('.state').style.display = 'block';

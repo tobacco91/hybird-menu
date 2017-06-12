@@ -103,8 +103,8 @@ export default class extends Base {
    * }
    */
   async addOneAction() {
-    let userId = this.get('user_id');
-    let addMessage = this.get();
+    let userId = this.post('user_id');
+    let addMessage = this.post();
     let info = await this.model('menu')
     .updateLike({
         menu_id : addMessage.menu_id,
@@ -226,9 +226,9 @@ export default class extends Base {
 
 
   async addCommentAction() {
-      let user_id = this.get('user_id');
-      let menu_id = this.get('menu_id');
-      let content = this.get('content');
+      let user_id = this.post('user_id');
+      let menu_id = this.post('menu_id');
+      let content = this.post('content');
       let time =  new Date();
       let userName = await this.model('user')
       .getName({
@@ -250,9 +250,9 @@ export default class extends Base {
 
 
   async addReplyAction() {
-     let user_id = this.get('user_id');
-     let comment_id = this.get('comment_id');
-     let content = this.get('content');
+     let user_id = this.post('user_id');
+     let comment_id = this.post('comment_id');
+     let content = this.post('content');
      let userName = await this.model('user')
       .getName({
           user_id: user_id
