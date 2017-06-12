@@ -82,19 +82,19 @@ $('.leave').addEventListener('click',function() {
             $('.state').style.display = 'none';
         },2000);
     } else {
-         //createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
-         setupWebViewJavascriptBridge(function(bridge) {
+         createIframe('menu://comment?menu_id='+menu_id+'&user_id='+user_id);
+        //  setupWebViewJavascriptBridge(function(bridge) {
 	
-            /* Initialize your app here */
+        //     /* Initialize your app here */
 
-            bridge.registerHandler('comment', function(data, responseCallback) {
-                console.log("JS Echo called with:", data)
-                responseCallback(data)
-            })
-            bridge.callHandler('comment', {'key':'value'}, function responseCallback(responseData) {
-                console.log("JS received response:", responseData)
-            })
-        })
+        //     bridge.registerHandler('comment', function(data, responseCallback) {
+        //         console.log("JS Echo called with:", data)
+        //         responseCallback(data)
+        //     })
+        //     bridge.callHandler('comment', {'key':'value'}, function responseCallback(responseData) {
+        //         console.log("JS received response:", responseData)
+        //     })
+        // })
 
     }
 });
@@ -110,5 +110,5 @@ $('.comment-list').addEventListener('click',function(e){
     
 })
 
-createIframe('/user/webview');
-createIframe('objc:menu://reply?user_id='+user_id);
+// createIframe('/user/webview');
+// createIframe('objc:menu://reply?user_id='+user_id);
