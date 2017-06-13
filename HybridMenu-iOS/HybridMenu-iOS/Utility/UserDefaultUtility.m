@@ -49,4 +49,11 @@
     NSDictionary *dic = [userDefaults dictionaryRepresentation];
     DLog(@"%@",dic);
 }
+
++(NSString *)getUserID{
+    return [self valueWithKey:@"user_id"];
+}
++(void)saveUserID:(NSString *)user_id{
+    [self saveValue:user_id forKey:@"user_id"];
+}
 @end

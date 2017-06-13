@@ -51,9 +51,9 @@ fprintf(stderr, "-------\n");                                               \
 //详情页
 #define DETAILAPI   @"http://www.cxy91.cn/user/page"
 //收藏详情
-#define COLLECTAPI  @"http://www.cxy91.cn/user/show_colle ct"
-//操作
-#define OPERATEAPI  @"http://www.cxy91.cn/user/add_one"
+#define COLLECTDETAILAPI  @"http://www.cxy91.cn/user/show_colle ct"
+//收藏操作
+#define COLLECTAPI  @"http://www.cxy91.cn/user/add_one"
 //个人
 #define PERSONAPI   @"http://www.cxy91.cn/user/person"
 //封面图片前缀

@@ -31,20 +31,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-GP-2ik">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-GP-2ik">
                                 <rect key="frame" x="8" y="510" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="cqH-BF-9vL"/>
                                     <constraint firstAttribute="width" secondItem="Xg8-GP-2ik" secondAttribute="height" multiplier="1:1" id="pWf-oa-jDY"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="menu_img_look.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvY-cW-M6R">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvY-cW-M6R">
                                 <rect key="frame" x="78" y="510" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AvY-cW-M6R" secondAttribute="height" multiplier="1:1" id="mOA-7M-uG8"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="menu_img_collect.png"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrT-HA-Xh2">
                                 <rect key="frame" x="24" y="510" width="42" height="15"/>
@@ -113,8 +111,4 @@
             <point key="canvasLocation" x="225" y="524.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="menu_img_collect.png" width="87" height="85"/>
-        <image name="menu_img_look.png" width="88" height="64"/>
-    </resources>
 </document>

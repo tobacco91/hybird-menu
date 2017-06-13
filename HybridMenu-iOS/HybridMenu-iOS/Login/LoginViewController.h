@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LoginHandler.h"
 @interface LoginViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *accountTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
-@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
-
+@property LoginHandler *handler;
++ (void)noLoginWith:(UIViewController *)viewController
+       successBlock:(SuccessBlock)successBlock
+        failedBlock:(FailedBlock)failedBlock;
 @end

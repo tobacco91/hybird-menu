@@ -135,19 +135,54 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     [cell.albumImageView sd_setImageWithURL:[NSURL URLWithString:model.menu_albums]];
     cell.titleLabel.text  = model.menu_title;
     cell.introduceLabel.text = model.menu_introduce;
-    // Configure the cell
     cell.likeLabel.text = model.menu_like.stringValue;
     cell.collectLabel.text = model.menu_collect.stringValue;
-    [cell.collectBtn addTarget:self action:@selector(collectAction) forControlEvents:UIControlEventTouchUpInside];
+    cell.collectBtn.tag = indexPath.row;
+//    NSLog(@"%d",indexPath.row);
+    [cell.collectBtn addTarget:self action:@selector(collectAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
-- (void)collectAction{
-    if ([UserDefaultUtility valueWithKey:@"userName"]==nil) {
-        [LoginHandler noLogin:self];
+- (void)collectAction:(UIButton *)sender{
+    NSString *user_id = [UserDefaultUtility getUserID];
+
+    if (user_id ==nil) {
+        [LoginViewController noLoginWith:self successBlock:^(id obj) {
+            [self collectAction:sender];
+        } failedBlock:^(id obj) {
+            
+        }];
     }
     else{
-        
+//        if (!sender.selected) {
+//            NSDictionary *parameters = @{@"user_id":user_id,@"type":@"menu_collect"};
+//            MenuListModel *model = self.dataArray[sender.tag];
+//            model.menu_collect = @(model.menu_collect.integerValue + 1);
+//            [self.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]]];
+//            [self.collectionView reloadData];
+//            sender.selected = YES;
+//
+//            HttpClient *client = [HttpClient defaultClient];
+//            [client requestWithPath:COLLECTAPI method:HttpRequestPost parameters:parameters prepareExecute:^{
+//                
+//            } progress:^(NSProgress *progress) {
+//                
+//            } success:^(NSURLSessionDataTask *task, id responseObject) {
+//                
+//            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//                
+//            }];
+//        }
+//        else{
+//            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"已经收藏" message:@"你已经收藏过啦=。=" preferredStyle:UIAlertControllerStyleAlert];
+//            
+//            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//            UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//            [alertC addAction:cancel];
+//            [alertC addAction:confirm];
+//            [self presentViewController:alertC animated:YES completion:nil];
+//        }
+        sender.selected = !sender.selected;
     }
 }
 

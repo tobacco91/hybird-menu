@@ -28,9 +28,10 @@
     [self.webView loadRequest:self.request];
     [self.view addSubview:self.webView];
     self.webView.delegate = self;
-    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+    
+//    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
 
-//    [self.bridge registerHandler:@"ObjC Echo" handler:^(id data, WVJBResponseCallback responseCallback) {
+//    [self.bridge registerHandler:@"comment" handler:^(id data, WVJBResponseCallback responseCallback) {
 //        NSLog(@"ObjC Echo called with: %@", data);
 //        responseCallback(data);
 //    }];
@@ -46,15 +47,16 @@
 }
 
 
-//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-//    NSURL *url = request.URL;
-//    NSString *scheme = url.scheme;
-//    if ([scheme isEqualToString:@"comment"]) {
-//        NSLog(@"comment");
-//        return NO;
-//    }
-//    return YES;
-//}
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    NSURL *url = request.URL;
+    NSLog(@"%@",url);
+    NSString *scheme = url.scheme;
+    if ([scheme isEqualToString:@"comment"]) {
+        NSLog(@"comment");
+        return NO;
+    }
+    return YES;
+}
 /*
 #pragma mark - Navigation
 

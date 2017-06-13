@@ -20,4 +20,7 @@
 +(void)saveParameter:(NSDictionary *)paramterDic;
 
 +(void)print;
+
++(NSString *)getUserID;
++(void)saveUserID:(NSString *)user_id;
 @end
