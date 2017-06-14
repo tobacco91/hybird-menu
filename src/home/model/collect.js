@@ -14,7 +14,11 @@ export default class extends think.model.base {
         //.setRelation(false)
         .count();
     }
-
+    async getMenu(_id) {
+        return await this.model('collect')
+        .where(_id)
+        .select();
+    }
 
     async personCollect(_id) {
         let sql = `select menu_id, menu_title, menu_introduce, menu_albums, menu_like, menu_collect from menu where menu_id in (select menu_id from collect where user_id = ${_id.user_id})`;

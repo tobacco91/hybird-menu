@@ -23,8 +23,6 @@ export default class extends think.model.relation {
     }
 
     async getComment(_menu) {
-        //let sql = `select * from reply,comment where comment_id in (select comment_id from comment where menu_id = ${_menu.menu_id}) OR menu_id = ${_menu.menu_id}`;
-        //return await this.query(sql);
         return await this.model('comment')
         .where(_menu)
         .select();

@@ -10,11 +10,13 @@ export default class extends Base {
   async listAction(){
     let sortId = this.get('sort_id');
     let pageNum = this.get('page_num');
+    let userId = this.get('user_id');
     let list = await this.model('menu')
     .getList({
         sort_id: sortId,
         menu_state: 1
     },pageNum);
+    
     if (think.isEmpty(list)) {
         return this.json(
             {
@@ -23,6 +25,31 @@ export default class extends Base {
             }
         )
     } else {
+        let login;
+        let collect;
+        let obj = {};
+        if(userId === '') {
+            login = false;
+        } else {
+            login = true;
+            collect = await this.model('collect')
+            .getMenu({
+                user_id: userId
+            });
+            collect.forEach((e) => {
+                obj[e.menu_id] = 1;
+            });
+            console.log(obj);
+            list.data.map((e) => {
+                if(obj[e.menu_id] === undefined) {
+                    e.collect = false;
+                } else {
+                    e.collect = true;
+                }
+            })
+        }
+        
+        list.login = login;
         return this.json(
             {
                 status: 200,
@@ -74,7 +101,6 @@ export default class extends Base {
     }
     async registerAction() {
       let user = this.post();
-      console.log(user)
       let info = await this.model('user')
       .addUser({
           user_name    :    user.name,
