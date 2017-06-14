@@ -84,6 +84,10 @@ container {
     font-size: 12px;
     overflow: hidden;
 }
+.step-detail p{
+    display: inline-block;
+    margin: 1rem 0;
+}
 .step-detail img {
     width: 100%;
     height: auto;
