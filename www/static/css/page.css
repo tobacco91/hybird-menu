@@ -24,6 +24,7 @@ image {
 container {
     display: block;
     width: 100%;
+    padding-bottom: 6rem;
 }
 .albums {
     width: 100%;
@@ -143,7 +144,7 @@ state {
     width:100%;
     box-sizing: border-box;
     padding: 0 2rem;
-    margin:1rem 0 6rem 0;
+    margin-top:1rem;
     font-size: 18px;
 }
 .comment-list {
@@ -169,13 +170,7 @@ state {
 .block-ul {
     padding: 0.5rem 0 2rem 2rem;
 }
-/*.block-ul li:after {
-    content: '';
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden;
-}*/
+
 .block-ul p {
     position: relative;
     font-size: 13px;
