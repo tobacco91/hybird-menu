@@ -7,7 +7,7 @@
 //
 
 #import "SegmentView.h"
-#define kTitleHeight (self.height*0.1)
+#define kTitleHeight (self.height*50/667)
 @interface SegmentView()<UIScrollViewDelegate>
 @property NSArray <UIViewController *> *controllers;
 @property UIScrollView *mainScrollView;

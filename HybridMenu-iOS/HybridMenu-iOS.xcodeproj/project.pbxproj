@@ -58,6 +58,7 @@
 		F2F5C0101EF02604008DE45E /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C00E1EF02604008DE45E /* MineTableViewCell.m */; };
 		F2F5C0111EF02604008DE45E /* MineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F5C00F1EF02604008DE45E /* MineTableViewCell.xib */; };
 		F2F5C0141EF02738008DE45E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C0131EF02738008DE45E /* SettingViewController.m */; };
+		F2F5C0171EF14883008DE45E /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C0161EF14883008DE45E /* CommentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		F2F5C00F1EF02604008DE45E /* MineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineTableViewCell.xib; sourceTree = "<group>"; };
 		F2F5C0121EF02738008DE45E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		F2F5C0131EF02738008DE45E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		F2F5C0151EF14883008DE45E /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		F2F5C0161EF14883008DE45E /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +223,8 @@
 		F24C1BC81EEC18960048D970 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F2F5C0151EF14883008DE45E /* CommentViewController.h */,
+				F2F5C0161EF14883008DE45E /* CommentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -829,6 +834,7 @@
 				F28A3E491EDC5820005E51EE /* main.m in Sources */,
 				F265658A1EDD1631004EEDCC /* LoginEntry.m in Sources */,
 				F216D28F1EE5A929004FC349 /* BaseCollectionViewController.m in Sources */,
+				F2F5C0171EF14883008DE45E /* CommentViewController.m in Sources */,
 				F2F5C0141EF02738008DE45E /* SettingViewController.m in Sources */,
 				F25F877E1EE8271C005661EC /* MyCollectViewController.m in Sources */,
 				F28A3E4D1EDC58D8005E51EE /* HttpClient.m in Sources */,

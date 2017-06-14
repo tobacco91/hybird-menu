@@ -18,6 +18,7 @@
         self.menu_albums = [ALBUMSAPI stringByAppendingString:dic[@"menu_albums"]];
         self.menu_like = dic[@"menu_like"];
         self.menu_collect = dic[@"menu_collect"];
+        self.isMyCollect = [dic[@"collect"] boolValue];
     }
     return self;
 }

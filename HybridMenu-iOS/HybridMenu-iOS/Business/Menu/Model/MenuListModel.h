@@ -15,5 +15,6 @@
 @property NSString *menu_albums;
 @property NSNumber *menu_like;
 @property NSNumber *menu_collect;
+@property bool isMyCollect;
 - (instancetype)initWithDic:(NSDictionary *)dic;
 @end

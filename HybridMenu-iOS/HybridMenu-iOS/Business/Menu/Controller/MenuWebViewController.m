@@ -8,6 +8,7 @@
 
 #import "MenuWebViewController.h"
 #import <WebViewJavascriptBridge.h>
+#import "CommentViewController.h"
 @interface MenuWebViewController ()<UIWebViewDelegate>
 @property UIWebView *webView;
 @property NSURLRequest *request;
@@ -22,6 +23,7 @@
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
@@ -47,16 +49,37 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self.webView reload];
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     NSURL *url = request.URL;
-    NSLog(@"%@",url);
     NSString *scheme = url.scheme;
-    if ([scheme isEqualToString:@"comment"]) {
-        NSLog(@"comment");
+    NSString *host = url.host;
+    NSDictionary *parameter = [AppUtility getURLParameters:url.absoluteString];
+    if ([scheme isEqualToString:@"menu"]) {
+        CommentType type = Comment;
+        NSString *ID = @"";
+        NSString *vcTitle = @"写评论";
+        if ([host isEqualToString:@"comment"]) {
+            ID = [parameter objectForKey:@"menu_id"];
+        }
+        else if([host isEqualToString:@"reply"]){
+            type = Reply;
+            ID = [parameter objectForKey:@"comment_id"];
+            NSString *comment_name = [parameter objectForKey:@"comment_name"];
+            vcTitle = [NSString stringWithFormat:@"回复:%@",comment_name];
+            
+        }
+        CommentViewController *commentVC = [[CommentViewController alloc]initWithCommentType:type andID:ID];
+        commentVC.title = vcTitle;
+        [self.navigationController pushViewController:commentVC animated:YES];
         return NO;
     }
     return YES;
 }
+
 /*
 #pragma mark - Navigation
 

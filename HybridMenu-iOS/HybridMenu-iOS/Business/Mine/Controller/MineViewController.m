@@ -7,7 +7,7 @@
 //
 
 #import "MineViewController.h"
-
+#import "MineTableViewCell.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic) UITableView *tableView;
 @property NSMutableArray *cellDictionary;
@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cellDictionary = @[
-                        @{@"title":@"我的收藏",@"controller":@"MyCollectViewController"},
+                        @{@"title":@"我的收藏",@"controller":@"MyCollectViewController",@"img":@""},
                          @{@"title":@"设置",@"img":@"关于.png",@"controller":@"SettingViewController"},
                          ].mutableCopy;
     [self.view addSubview:self.tableView];
@@ -33,15 +33,9 @@
 
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH,SCREENHEIGHT) style:UITableViewStyleGrouped];
-//        _tableView.alwaysBounceVertical = YES;
-//        _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-//        _tableView.sectionFooterHeight = 0;
-//        _tableView.sectionFooterHeight = 0;
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH,SCREENHEIGHT)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-//        [_tableView setAutoresizesSubviews:NO];
-//        [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
     return _tableView;
 }
@@ -55,46 +49,43 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 100)];
-    
+    static NSString *identifier = @"MineTableViewCell";
+    MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
+    NSDictionary *dic = self.cellDictionary[indexPath.row];
+    if(!cell){
+        cell = [[[NSBundle mainBundle]loadNibNamed:identifier owner:self options:nil] lastObject];
+        cell.photoView = dic[@"img"];
+        cell.titleLabel.text = dic[@"title"];
+        
+        
+    }
     return cell;
 }
-//
-//#pragma mark 分割tableview设置
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    NSSet *set = [NSSet setWithObjects:@1,@7, nil];
-//    NSSet *nowSet = [NSSet setWithObject:[NSNumber numberWithInteger:section]];
-//    if ([nowSet isSubsetOfSet:set]) {
-//        return 15;
-//    }else{
-//        return 0.00001;
-//    }
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if(indexPath.section == 0){
-//        return 0.12*SCREENHEIGHT;
-//    }
     return 0.065*SCREENHEIGHT;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString *className;
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSString *className =self.cellDictionary[indexPath.row][@"Controller"];
+    UIViewController *viewController =  (UIViewController *)[[NSClassFromString(className) alloc] init];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
     
 //    NSSet *set = [NSSet setWithObjects:@0, @1, @2, @5, @6, nil];
-    NSSet *needLoginSet = [NSSet setWithObject: [NSNumber numberWithInteger:indexPath.section]];
+
     
     //需账户登陆
-        if ([UserDefaultUtility getUserID]) {
-            
-        } else{
-            NSString *message;
-            if ([needLoginSet containsObject:@0]) {
-                message = @"登录后才能查看个人信息哦";
-            }
-            [LoginViewController noLoginWith:self successBlock:nil failedBlock:nil];
-        }
+//        if ([UserDefaultUtility getUserID]) {
+//            
+//        } else{
+//            NSString *message;
+//            if ([needLoginSet containsObject:@0]) {
+//                message = @"登录后才能查看个人信息哦";
+//            }
+//            [LoginViewController noLoginWith:self successBlock:nil failedBlock:nil];
+//        }
 }
 /*
 #pragma mark - Navigation

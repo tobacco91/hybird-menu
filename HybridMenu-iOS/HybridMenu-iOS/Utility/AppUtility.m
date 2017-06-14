@@ -157,4 +157,44 @@
         return NO;
     }
 }
+
++ (NSMutableDictionary *)getURLParameters:(NSString *)urlStr{
+    NSRange range = [urlStr rangeOfString:@"?"];
+    if (range.location == NSNotFound) {
+        return nil;
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSString *parametersString = [urlStr substringFromIndex:range.location+1];
+    NSArray *urlComponents = [parametersString componentsSeparatedByString:@"&"];
+    for (NSString *keyValuePair in urlComponents) {
+        NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+        NSString *key = [pairComponents.firstObject stringByRemovingPercentEncoding];
+        NSString *value = [pairComponents.lastObject stringByRemovingPercentEncoding];
+        
+        // Key不能为nil
+        if (key == nil || value == nil) {
+            continue;
+        }
+        
+        id existValue = [params valueForKey:key];
+        if (existValue != nil) {
+            // 已存在的值，生成数组
+            if ([existValue isKindOfClass:[NSArray class]]) {
+                // 已存在的值生成数组
+                NSMutableArray *items = [NSMutableArray arrayWithArray:existValue];
+                [items addObject:value];
+                
+                [params setValue:items forKey:key];
+            } else {
+                // 非数组
+                [params setValue:@[existValue, value] forKey:key];
+            }
+            
+        } else {
+            // 设置值
+            [params setValue:value forKey:key];
+        }
+    }
+    return params;
+}
 @end

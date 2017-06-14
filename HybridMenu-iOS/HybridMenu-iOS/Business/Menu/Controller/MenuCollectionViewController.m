@@ -79,8 +79,10 @@ static NSString * const reuseIdentifier = @"MenuListCell";
 
 - (void)getData{
     //1:甜品 2:面食 3:素菜 4:养生汤 5:炒菜
+    NSString *user_id = [UserDefaultUtility getUserID]?:@"";
     NSDictionary *paramters = @{@"sort_id":self.sort_id,
-                                @"page_num":@(self.page)};
+                                @"page_num":@(self.page),
+                                @"user_id":user_id};
     HttpClient *client = [HttpClient defaultClient];
     [client requestWithPath:LISTAPI method:HttpRequestGet parameters:paramters prepareExecute:^{
         
@@ -138,7 +140,7 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     cell.likeLabel.text = model.menu_like.stringValue;
     cell.collectLabel.text = model.menu_collect.stringValue;
     cell.collectBtn.tag = indexPath.row;
-//    NSLog(@"%d",indexPath.row);
+    cell.collectBtn.selected = model.isMyCollect;
     [cell.collectBtn addTarget:self action:@selector(collectAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
@@ -148,41 +150,40 @@ static NSString * const reuseIdentifier = @"MenuListCell";
 
     if (user_id ==nil) {
         [LoginViewController noLoginWith:self successBlock:^(id obj) {
+            [self getData];
             [self collectAction:sender];
         } failedBlock:^(id obj) {
             
         }];
     }
     else{
-//        if (!sender.selected) {
-//            NSDictionary *parameters = @{@"user_id":user_id,@"type":@"menu_collect"};
-//            MenuListModel *model = self.dataArray[sender.tag];
-//            model.menu_collect = @(model.menu_collect.integerValue + 1);
-//            [self.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]]];
-//            [self.collectionView reloadData];
-//            sender.selected = YES;
-//
-//            HttpClient *client = [HttpClient defaultClient];
-//            [client requestWithPath:COLLECTAPI method:HttpRequestPost parameters:parameters prepareExecute:^{
-//                
-//            } progress:^(NSProgress *progress) {
-//                
-//            } success:^(NSURLSessionDataTask *task, id responseObject) {
-//                
-//            } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//                
-//            }];
-//        }
-//        else{
-//            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"已经收藏" message:@"你已经收藏过啦=。=" preferredStyle:UIAlertControllerStyleAlert];
-//            
-//            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-//            UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-//            [alertC addAction:cancel];
-//            [alertC addAction:confirm];
-//            [self presentViewController:alertC animated:YES completion:nil];
-//        }
-        sender.selected = !sender.selected;
+        if (!sender.selected) {
+  
+            MenuListModel *model = self.dataArray[sender.tag];
+            NSDictionary *parameters = @{@"user_id":user_id,@"type":@"menu_collect",@"menu_id":model.menu_id};
+            model.menu_collect = @(model.menu_collect.integerValue + 1);
+            [self.collectionView reloadData];
+            HttpClient *client = [HttpClient defaultClient];
+            model.isMyCollect = YES;
+            [client requestWithPath:COLLECTAPI method:HttpRequestPost parameters:parameters prepareExecute:^{
+                
+            } progress:^(NSProgress *progress) {
+                
+            } success:^(NSURLSessionDataTask *task, id responseObject) {
+                NSLog(@"%@",responseObject);
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                NSLog(@"%@",error);
+            }];
+        }
+        else{
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"已经收藏" message:@"你已经收藏过啦=。=" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alertC addAction:cancel];
+            [alertC addAction:confirm];
+            [self presentViewController:alertC animated:YES completion:nil];
+        }
     }
 }
 
@@ -191,7 +192,7 @@ static NSString * const reuseIdentifier = @"MenuListCell";
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSNumber *menu_id = self.dataArray[indexPath.row].menu_id;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.cxy91.cn/user/page?menu_id=%@&user_id=%@",menu_id,[UserDefaultUtility valueWithKey:@"user_id"]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.cxy91.cn/user/page?menu_id=%@&user_id=%@",menu_id,[UserDefaultUtility getUserID]]];
     MenuWebViewController *vc = [[MenuWebViewController alloc]initWithRequest:[NSURLRequest requestWithURL:url]];
     vc.title = self.dataArray[indexPath.row].menu_title;
     [self.parentViewController.navigationController pushViewController:vc animated:YES];

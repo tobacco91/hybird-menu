@@ -48,4 +48,7 @@
 /********************* Verification Utils **********************/
 //验证手机号码合法性（正则）
 + (BOOL)checkPhoneNumber:(NSString *)phoneNumber;
+
+//截取url获得参数字典
++ (NSMutableDictionary *)getURLParameters:(NSString *)urlStr;
 @end
