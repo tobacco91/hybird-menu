@@ -11,5 +11,5 @@
 @interface MineTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
+@property UIColor *cornerColor;
 @end

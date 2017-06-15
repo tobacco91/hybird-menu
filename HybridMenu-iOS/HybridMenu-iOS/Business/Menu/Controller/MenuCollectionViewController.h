@@ -7,9 +7,13 @@
 //
 
 #import "BaseCollectionViewController.h"
+typedef NS_ENUM(NSInteger, MenuColloectType) {
+    Menu,
+    Collect,
+};
 
 @interface MenuCollectionViewController : BaseCollectionViewController
-- (instancetype)initWithID:(NSNumber *)sord_id;
+- (instancetype)initWithID:(NSNumber *)sord_id menuColloectType:(MenuColloectType)menuColloectType;
 - (void)loadData;
 - (void)setWhiteViewFrame:(CGRect)frame;
 @end

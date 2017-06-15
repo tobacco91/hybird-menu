@@ -13,4 +13,5 @@
 + (void)noLoginWith:(UIViewController *)viewController
        successBlock:(SuccessBlock)successBlock
         failedBlock:(FailedBlock)failedBlock;
+- (instancetype)initWithSuccessBlock:(SuccessBlock)successBlock failedBlock:(FailedBlock)failedBlock;
 @end

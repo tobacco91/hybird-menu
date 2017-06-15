@@ -22,7 +22,7 @@
     NSArray *titleArray = @[@"甜品",@"面食",@"素菜",@"养生汤",@"炒菜"];
     self.array = [NSMutableArray array];
     for (int i = 0; i<titleArray.count; i++) {
-        MenuCollectionViewController *vc = [[MenuCollectionViewController alloc]initWithID:@(i+1)];
+        MenuCollectionViewController *vc = [[MenuCollectionViewController alloc]initWithID:@(i+1) menuColloectType:Menu];
         [self addChildViewController:vc];
         vc.title = titleArray[i];
         [self.array addObject:vc];

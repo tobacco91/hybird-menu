@@ -19,10 +19,22 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkBtn;
 @property (weak, nonatomic) IBOutlet UILabel *introduceLaebl;
 @property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+@property SuccessBlock successBlock;
+@property FailedBlock  failedBloclk;
 @property UIButton *selectedBtn;
 @end
 
 @implementation LoginViewController
+
+- (instancetype)initWithSuccessBlock:(SuccessBlock)successBlock failedBlock:(FailedBlock)failedBlock{
+    self = [self init];
+    if(self){
+        self.handler = [[LoginHandler alloc]init];
+        self.handler.successBlock = successBlock;
+        self.handler.failedBlock  = failedBlock;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -138,6 +150,7 @@
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"我再看看" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"马上登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         LoginViewController *LVC = [[LoginViewController alloc] init];
+        LVC.handler = [[LoginHandler alloc]init];
         LVC.handler.successBlock = successBlock;
         LVC.handler.failedBlock = failedBlock;
         [viewController.navigationController presentViewController:LVC animated:YES completion:^{

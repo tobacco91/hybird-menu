@@ -17,15 +17,17 @@
 @property NSInteger page;
 @property MBProgressHUD *hud;
 @property UIView *whiteView;
+@property MenuColloectType type;
 @end
 
 static NSString * const reuseIdentifier = @"MenuListCell";
 
 @implementation MenuCollectionViewController
 
-- (instancetype)initWithID:(NSNumber *)sord_id{
+- (instancetype)initWithID:(NSNumber *)sord_id menuColloectType:(MenuColloectType)menuColloectType{
     self = [self initWithCollectionViewLayout:[UICollectionViewLayout new]];
     if (self) {
+        self.type = menuColloectType;
         self.sort_id = sord_id;
         self.dataArray = [NSMutableArray array];
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -43,12 +45,8 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     self.whiteView.backgroundColor = [UIColor whiteColor];
     self.hud = [MBProgressHUD showHUDAddedTo:self.whiteView animated:YES];
     [self.view addSubview:self.whiteView];
-    
-
-    
     self.collectionView.mj_header.hidden = YES;
     self.collectionView.mj_footer.hidden = YES;
-    
     // Do any additional setup after loading the view.
 }
 
@@ -79,39 +77,56 @@ static NSString * const reuseIdentifier = @"MenuListCell";
 
 - (void)getData{
     //1:甜品 2:面食 3:素菜 4:养生汤 5:炒菜
+    NSString *api;
     NSString *user_id = [UserDefaultUtility getUserID]?:@"";
-    NSDictionary *paramters = @{@"sort_id":self.sort_id,
-                                @"page_num":@(self.page),
-                                @"user_id":user_id};
+    NSMutableDictionary *paramters = @{@"user_id":user_id,@"page_num":@(self.page)}.mutableCopy;
+    if (self.type == Menu) {
+        api = LISTAPI;
+        [paramters setObject:self.sort_id forKey:@"sort_id"];
+    }
+    else{
+        api = COLLECTDETAILAPI;
+    }
     HttpClient *client = [HttpClient defaultClient];
-    [client requestWithPath:LISTAPI method:HttpRequestGet parameters:paramters prepareExecute:^{
+    [client requestWithPath:api method:HttpRequestGet parameters:paramters prepareExecute:^{
         
     } progress:^(NSProgress *progress) {
         
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         [self.hud hideAnimated:YES];
         [self.whiteView removeFromSuperview];
-        if (self.page == 1) {
-            self.dataArray = [NSMutableArray array];
-        }
-        NSArray *array = responseObject[@"message"][@"data"];
-        self.page = [responseObject[@"message"][@"currentPage"] integerValue];
-        for (int i = 0 ; i<array.count; i++) {
-            MenuListModel *model = [[MenuListModel alloc]initWithDic:array[i]];
-            [self.dataArray addObject:model];
-        }
-        
-        self.collectionView.mj_header.hidden = NO;
-        self.collectionView.mj_footer.hidden = NO;
-        
-        [self.collectionView reloadData];
-        [self.collectionView.mj_header endRefreshing];
-        if (self.page == [responseObject[@"message"][@"totalPages"] integerValue]) {
-            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        if(self.type == Menu){
+            if (self.page == 1) {
+                self.dataArray = [NSMutableArray array];
+            }
+            NSArray *array = responseObject[@"message"][@"data"];
+            self.page = [responseObject[@"message"][@"currentPage"] integerValue];
+            for (int i = 0 ; i<array.count; i++) {
+                MenuListModel *model = [[MenuListModel alloc]initWithDic:array[i]];
+                [self.dataArray addObject:model];
+            }
+            if (self.page == [responseObject[@"message"][@"totalPages"] integerValue]) {
+                [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+            }
+            else{
+                [self.collectionView.mj_footer endRefreshing];
+            }
         }
         else{
-            [self.collectionView.mj_footer endRefreshing];
+            NSArray *array = responseObject[@"message"];
+            for (int i = 0 ; i<array.count; i++) {
+                MenuListModel *model = [[MenuListModel alloc]initWithDic:array[i]];
+                model.isMyCollect = true;
+                [self.dataArray addObject:model];
+            }
+            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
         }
+        self.whiteView.hidden = YES;
+        self.collectionView.mj_header.hidden = NO;
+        self.collectionView.mj_footer.hidden = NO;
+        [self.collectionView reloadData];
+        [self.collectionView.mj_header endRefreshing];
+  
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self.collectionView.mj_header endRefreshing];
@@ -145,12 +160,26 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     return cell;
 }
 
+#pragma mark <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSNumber *menu_id = self.dataArray[indexPath.row].menu_id;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.cxy91.cn/user/page?menu_id=%@&user_id=%@",menu_id,[UserDefaultUtility getUserID]]];
+    MenuWebViewController *vc = [[MenuWebViewController alloc]initWithRequest:[NSURLRequest requestWithURL:url]];
+    vc.title = self.dataArray[indexPath.row].menu_title;
+    if (self.type==Collect) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else{
+        [self.parentViewController.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 - (void)collectAction:(UIButton *)sender{
     NSString *user_id = [UserDefaultUtility getUserID];
-
+    
     if (user_id ==nil) {
         [LoginViewController noLoginWith:self successBlock:^(id obj) {
-            [self getData];
+            [self headerRefresh];
             [self collectAction:sender];
         } failedBlock:^(id obj) {
             
@@ -158,7 +187,6 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     }
     else{
         if (!sender.selected) {
-  
             MenuListModel *model = self.dataArray[sender.tag];
             NSDictionary *parameters = @{@"user_id":user_id,@"type":@"menu_collect",@"menu_id":model.menu_id};
             model.menu_collect = @(model.menu_collect.integerValue + 1);
@@ -187,16 +215,6 @@ static NSString * const reuseIdentifier = @"MenuListCell";
     }
 }
 
-
-
-#pragma mark <UICollectionViewDelegate>
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSNumber *menu_id = self.dataArray[indexPath.row].menu_id;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.cxy91.cn/user/page?menu_id=%@&user_id=%@",menu_id,[UserDefaultUtility getUserID]]];
-    MenuWebViewController *vc = [[MenuWebViewController alloc]initWithRequest:[NSURLRequest requestWithURL:url]];
-    vc.title = self.dataArray[indexPath.row].menu_title;
-    [self.parentViewController.navigationController pushViewController:vc animated:YES];
-}
 /*
  // Uncomment this method to specify if the specified item should be highlighted during tracking
  - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

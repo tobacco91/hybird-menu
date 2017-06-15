@@ -1,22 +1,22 @@
 //
-//  MyCollectViewController.m
+//  AboutViewController.m
 //  HybridMenu-iOS
 //
-//  Created by 李展 on 2017/6/7.
+//  Created by 李展 on 2017/6/15.
 //  Copyright © 2017年 JohnLee. All rights reserved.
 //
 
-#import "MyCollectViewController.h"
+#import "AboutViewController.h"
 
-@interface MyCollectViewController ()
+@interface AboutViewController ()
 
 @end
 
-@implementation MyCollectViewController
+@implementation AboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

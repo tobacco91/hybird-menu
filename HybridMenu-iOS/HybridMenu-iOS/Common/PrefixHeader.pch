@@ -53,7 +53,7 @@ fprintf(stderr, "-------\n");                                               \
 //详情页
 #define DETAILAPI   @"http://www.cxy91.cn/user/page"
 //收藏详情
-#define COLLECTDETAILAPI  @"http://www.cxy91.cn/user/show_colle ct"
+#define COLLECTDETAILAPI  @"http://www.cxy91.cn/user/show_collect"
 //收藏操作
 #define COLLECTAPI  @"http://www.cxy91.cn/user/add_one"
 //个人
