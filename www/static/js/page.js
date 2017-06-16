@@ -73,7 +73,8 @@ $('.collect').addEventListener('click', function() {
 })
         
 $('.leave').addEventListener('click',function() {
-    if(user_id === '') {
+    console.log(user_id)
+    if(user_id == '' || user_id == null || user_id == undefined) {
         $('.state').innerHTML = '请先登录';
         $('.state').style.display = 'block';
         setTimeout(function(){
