@@ -228,12 +228,12 @@ export default class extends Base {
 
   async showCollectAction() {
       //await this.session('userId',1);
-    let pageNum = this.get('page_num');
+    //let pageNum = this.get('page_num');
     let id = this.get('user_id');
     let list = await this.model('collect')
     .personCollect({
         user_id: id
-    },pageNum);
+    });
     if (think.isEmpty(list)) {
         return this.json(
             {
