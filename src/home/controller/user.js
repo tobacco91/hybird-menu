@@ -177,7 +177,7 @@ export default class extends Base {
                 return this.json(
                     {
                         status: 400,
-                        message: '已经收藏，不可再次收藏'
+                        message: '已经收藏，不可重复'
                     }
                 )
             }
