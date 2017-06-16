@@ -106,7 +106,10 @@
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         [self.hud hideAnimated:YES];
         if ([[responseObject objectForKey:@"status"] isEqualToNumber:@200]) {
-            [LoginEntry loginWithUserName:paramters[@"name"] passworld:paramters[@"password"] withDictionaryParam:responseObject[@"message"]];
+            if ([api isEqualToString:LOGINAPI]) {
+                [LoginEntry loginWithUserName:paramters[@"name"] passworld:paramters[@"password"] withDictionaryParam:responseObject[@"message"]];
+            }
+    
             [self dismissViewControllerAnimated:YES completion:^{
                 
             }];

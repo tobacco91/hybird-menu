@@ -32,7 +32,7 @@
                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sMy-jy-aHa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="三明治.png" translatesAutoresizingMaskIntoConstraints="NO" id="sMy-jy-aHa">
                     <rect key="frame" x="137" y="120" width="100.5" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="2Ue-Xy-KE9"/>
@@ -62,4 +62,7 @@
             <point key="canvasLocation" x="113.5" y="141.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="三明治.png" width="215" height="200"/>
+    </resources>
 </document>
