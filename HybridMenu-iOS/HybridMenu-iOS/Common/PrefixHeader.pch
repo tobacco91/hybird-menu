@@ -1,0 +1,77 @@
+//
+//  PrefixHeader.pch
+//  HybridMenu-iOS
+//
+//  Created by 李展 on 2017/5/30.
+//  Copyright © 2017年 JohnLee. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#if DEBUG
+#define DDLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+#define NSLog(format, ...) do {                                                                          \
+fprintf(stderr, "<%s : %d> | %s\n",                                           \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+__LINE__, __func__);                                                        \
+(NSLog)((format), ##__VA_ARGS__);                                           \
+fprintf(stderr, "-------\n");                                               \
+} while (0)
+
+#else
+#define DDLog(xx, ...)     ;
+//#define NSLog(format, ...) ;
+#endif
+
+#import <YYKit/YYKit.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <Masonry.h>
+#import "UserDefaultUtility.h"
+#import "LoginEntry.h"
+#import "HttpClient.h"
+#import "LoginViewController.h"
+#import "AppUtility.h"
+
+//APP INFO
+#define APP_NAME @"Menu"
+#define VERSION @"v1.0.0"
+#define COPYRIGHT @"Copyright @2017 JohnLee All Rights Reserved"
+//注册
+#define REGISTERAPI @"http://www.cxy91.cn/user/register"
+//登录
+#define LOGINAPI    @"http://www.cxy91.cn/user/login"
+//列表
+#define LISTAPI     @"http://www.cxy91.cn/user/list"
+//详情页
+#define DETAILAPI   @"http://www.cxy91.cn/user/page"
+//收藏详情
+#define COLLECTDETAILAPI  @"http://www.cxy91.cn/user/show_collect"
+//收藏操作
+#define COLLECTAPI  @"http://www.cxy91.cn/user/add_one"
+//个人
+#define PERSONAPI   @"http://www.cxy91.cn/user/person"
+//封面图片前缀
+#define ALBUMSAPI   @"http://www.cxy91.cn/static/img/albums/"
+//步骤图片前缀
+#define STEPAPI     @"http://www.cxy91.cn/static/img/step/"
+#define COMMENTAPI  @"http://www.cxy91.cn/user/add_comment"
+#define REPLYAPI    @"http://www.cxy91.cn/user/add_reply"
+
+
+#define SCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define NVGBARHEIGHT (self.navigationController.navigationBar.frame.size.height)
+#define STATUSBARHEIGHT ([[UIApplication sharedApplication] statusBarFrame].size.height)
+#define HEADBARHEIGHT (NVGBARHEIGHT+STATUSBARHEIGHT)
+#define TABBARHEIGHT (self.tabBarController.tabBar.frame.size.height)
+#define MAIN_COLOR  [UIColor colorWithRed:84/255.0 green:172/255.0 blue:255/255.0 alpha:1]
+
+#endif /* PrefixHeader_pch */

@@ -63,23 +63,31 @@
     [manger HEAD:url parameters:parameters success:success failure:failure];
 }
 
-//- (BOOL)isReachability{
-//    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
-//    [reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        if (status == AFNetworkReachabilityStatusNotReachable) {
-//
-//        }
-//        else{
-//
-//        }
-//    }];
-//    [reachabilityManager startMonitoring];
-
-//    [reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        if (status == AFNetworkReachabilityStatusNotReachable) {
-//            return NO;
-//            //网络无连接的提示
-//        }
-//    }];
-//}
++ (BOOL)isReachability:(NSString *) strUrl
+{
+    __block BOOL isReachability = NO;
+    
+    NSURL *baseURL = [NSURL URLWithString:strUrl];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithBaseURL:baseURL];
+    
+    NSOperationQueue *operationQueue = manager.operationQueue;
+    
+    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                [operationQueue setSuspended:NO];
+                isReachability = YES;
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                isReachability = NO;
+            default:
+                [operationQueue setSuspended:YES];
+                break;
+        }
+    }];
+    [manager.reachabilityManager startMonitoring];
+    
+    return isReachability;
+}
 @end

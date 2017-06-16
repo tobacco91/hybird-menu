@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LoginViewController.h"
+#import "MainTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    MainTabBarController *mainTabBarController = [[MainTabBarController alloc]init];
+    self.window.rootViewController = mainTabBarController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [NSThread sleepForTimeInterval:3.0];
     return YES;
 }
 

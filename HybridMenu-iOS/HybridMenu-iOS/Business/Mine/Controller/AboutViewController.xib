@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CopyRight@2017 All Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEG-nx-kir">
+                    <rect key="frame" x="8" y="644.5" width="359" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美食大作战" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9it-4r-eNL">
+                    <rect key="frame" x="157" y="230" width="61.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="三明治.png" translatesAutoresizingMaskIntoConstraints="NO" id="sMy-jy-aHa">
+                    <rect key="frame" x="137" y="120" width="100.5" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="2Ue-Xy-KE9"/>
+                        <constraint firstAttribute="width" secondItem="sMy-jy-aHa" secondAttribute="height" multiplier="1:1" id="fOV-If-Pqc"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version v1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJB-fb-aKh">
+                    <rect key="frame" x="8" y="254.5" width="359" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NEG-nx-kir" secondAttribute="bottom" constant="8" id="3NM-1W-3e7"/>
+                <constraint firstItem="NEG-nx-kir" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="45J-Mo-wbf"/>
+                <constraint firstAttribute="trailing" secondItem="lJB-fb-aKh" secondAttribute="trailing" constant="8" id="HSP-KE-fee"/>
+                <constraint firstItem="lJB-fb-aKh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="JMa-cm-3YO"/>
+                <constraint firstItem="9it-4r-eNL" firstAttribute="centerX" secondItem="sMy-jy-aHa" secondAttribute="centerX" id="RyS-HV-lSe"/>
+                <constraint firstAttribute="trailing" secondItem="NEG-nx-kir" secondAttribute="trailing" constant="8" id="WBh-fA-Lc5"/>
+                <constraint firstItem="lJB-fb-aKh" firstAttribute="top" secondItem="9it-4r-eNL" secondAttribute="bottom" constant="10" id="cFJ-fw-rOe"/>
+                <constraint firstItem="sMy-jy-aHa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="gtF-Es-8OG"/>
+                <constraint firstItem="lJB-fb-aKh" firstAttribute="centerX" secondItem="sMy-jy-aHa" secondAttribute="centerX" id="lMc-tV-y8j"/>
+                <constraint firstItem="9it-4r-eNL" firstAttribute="top" secondItem="sMy-jy-aHa" secondAttribute="bottom" constant="10" id="o4x-1N-PEh"/>
+            </constraints>
+            <point key="canvasLocation" x="113.5" y="141.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="三明治.png" width="215" height="200"/>
+    </resources>
+</document>

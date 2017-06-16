@@ -5,6 +5,6 @@ target 'HybridMenu-iOS' do
 	pod 'Masonry'
 	pod 'MBProgressHUD'
 	pod 'YYKit'
+	pod 'MJRefresh'
+	pod 'WebViewJavascriptBridge'
 end
-
-
